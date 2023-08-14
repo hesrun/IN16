@@ -1,0 +1,203 @@
+.start-links {
+    b {
+        color: $orange;
+    }
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        list-style: none;
+        gap: 0.5rem 1rem;
+    }
+    &__link {
+        text-decoration: none;
+        color:rgba(white,0.75);
+        &:hover {
+            color: $orange;
+        }
+    }
+}
+
+.app-info {
+    margin-top: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 12px;
+}
+
+.step-name {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+    &:last-child {
+        margin-bottom: 0;
+    }
+    &__count {
+        flex: 0 0 auto;
+        font-family: $mgj;
+        color: rgba(white,0.5);
+        font-size: 24px;
+        line-height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: baseline;
+        width: 50px;
+        height: 50px;
+        border: 3px rgba(white,0.5) solid;
+    }
+}
+
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 60px 100px;
+}
+
+.get-apps {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px 100px;
+}
+
+.video-preview {
+    display: block;
+    position: relative;
+    transition: all 0.3s;
+    &:hover {
+        box-shadow: 0 0 0 2px $orange;
+    }
+    &__img {
+        width: 100%;
+        vertical-align: middle;
+    }
+    &__btn {
+        font-size: 2.5rem;
+        position: absolute;
+        bottom: 1rem;
+        right: 1rem;
+        color: white;
+        &:hover {
+            color: $orange;
+        }
+    }
+}
+
+.faq-list {
+    &__item {
+        position: relative;
+    }
+    &__title {
+        width: 50%;
+        display: block;
+        color: white;
+        text-decoration: none;
+        padding: 1rem;
+        border: 1px transparent solid;
+        position: relative;
+        z-index: 1;
+        &:hover {
+            color: $orange;
+        }
+        &_active {
+            color: $orange;
+            border: 1px white solid;
+            border-right-color: black;
+            & + .faq-list__text {
+                margin-left: -1px;
+                display: block;
+            }
+        }
+    }
+    &__text {
+        display: none;
+        background: black;
+        border: 1px white solid;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translateY(-50%);
+        padding: 1.5rem;
+    }
+}
+
+.video-modal {
+    padding: 0px;
+    max-width: 960px;
+    video {
+        width: 100%;
+        vertical-align: middle;
+    }
+    a.close-modal {
+        filter: invert(1);
+    }
+}
+
+@media (max-width: 1400px) {
+    .get-apps {
+        gap: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 32px;
+    }
+    h2 {
+        font-size: 32px;
+    }
+    h3 {
+        font-size: 18px;
+    }
+    .section-space {
+        padding-top: 4rem;
+        &:last-child {
+            padding-bottom: 4rem;
+        }
+        &:first-child {
+            padding-top: 4rem;
+        }
+    }
+    .steps-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    .get-apps {
+        gap: 15px;
+    }
+    .faq-btns {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    .faq-list {
+        &__title {
+            width: 100%;
+            padding-left: 0;
+            padding-right: 0;
+            &_active {
+                color: $orange;
+                border: none;
+            }
+        }
+        &__text {
+            position: static;
+            transform: none;
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .step-name {
+        gap: 1rem;
+        &__count {
+            font-size: 18px;
+            line-height: 35px;
+            width: 35px;
+            height: 35px;
+        }
+        &__title {
+            font-size: 18px;
+        }
+    }    
+}

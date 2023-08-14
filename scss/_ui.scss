@@ -1,0 +1,253 @@
+.orange-text {
+    color: $orange !important;
+}
+.orange-bg {
+    background-color: $orange !important;
+}
+
+.c-button {
+    $root: &;
+    font-family: $inter;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-weight: 500;
+    height: 2.667rem;
+    padding: 0 2rem;
+    color: white;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    appearance: none;
+    border: none;
+    cursor: pointer;
+    &_clear {
+        font-size: 12px;
+        &:hover {
+            color: $orange;
+        }
+    }
+    &_white {
+        &#{$root}_filled {
+            color: black;
+            background: white;
+        }
+        &#{$root}_outline {
+            color: white;
+            background: black;
+            border: 2px white solid;
+        }
+    }
+    &_orange {
+        &#{$root}_filled {
+            color: black;
+            background: $orange;
+        }
+        &#{$root}_outline {
+            color: white;
+            background: orange;
+            border: 2px orange solid;
+        }
+    }
+    &_full {
+        width: 100%;
+    }
+    &_icon {
+        gap: 8px;
+    }
+}
+
+.c-input {
+    position: relative;
+    width: 100%;
+    margin-top: 2rem;
+    &:first-child {
+        margin-top: 0px;
+    }
+    &:has(input[type="text"]:focus):after {
+        width: 100%;
+        opacity: 1;
+    }
+    &:not(:has(input[type="text"]:placeholder-shown)):after {
+        width: 100%;
+        opacity: 1;
+    }
+    &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 1px;
+        background: $orange;
+        box-shadow: 0 0 4px 1px #FF7426;
+        transition: width 0.3s ease-in-out;
+        opacity: 0;
+    }
+    &__field {
+        line-height: 2.333rem;
+        color: white;
+        font-weight: 400;
+        width: 100%;
+        background: none;
+        border: none;
+        border-bottom: 1px $line solid;
+        outline: none;
+        @include placeholder {
+            font-size: .867rem;
+            color: white;
+            opacity: 1;
+            text-transform: uppercase;
+        }
+    }
+}
+
+.c-textarea {
+    margin-top: 2rem;
+    &:first-child {
+        margin-top: 0px;
+    }
+    &__label {
+        display: block;
+        margin-bottom: 0.5rem;
+    }
+    &__field {
+        min-height: 8rem;
+        border: 1px white solid;
+        background: none;
+        resize: none;
+        color: white;
+        font-weight: 400;
+        width: 100%;
+        background: none;
+        outline: none;
+        padding: 1rem;
+        transition: all 0.3s;
+        &:focus {
+            border-color: $orange;
+            box-shadow: 0 0 4px 1px #FF7426, 0 0 4px 1px #FF7426 inset;
+        }
+    }
+}
+
+
+
+.blocker {
+    padding: 0px;
+    z-index: 11;
+}
+
+.modal-fs {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    height: 100%;
+    width: 100%;
+    max-width: 100%;
+    box-shadow: none;
+    background: black;
+    overflow: auto;
+    padding: 0;
+    a.close-modal {
+        position: fixed;
+        left: 130px;
+        top: 16px;
+        width: 50px;
+        height: 50px;
+        background: none;
+        color: transparent;
+        &:after, &:before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            display: block;
+            width: 100%;
+            height: 1px;
+            background: #fff;
+        }
+        &:after {
+            transform: rotate(45deg);
+        }
+        &:before {
+            transform: rotate(-45deg);
+        }
+    }
+    &__body {
+        min-height: 100%;
+        padding: 4rem 0;
+        flex: 1 1 auto;
+        display: flex;
+        align-items: center;
+    }
+}
+
+
+
+.product-counter {
+    display: flex;
+    align-items: center;
+    &__quant {
+        appearance: none;
+        background: none;
+        height: 20px;
+        border: none;
+        color: white;
+        width: 2rem;
+        text-align: center;
+        font-size: 12px;
+        font-weight: 500;
+    }
+    &__btn {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: 600;
+        width: 1.333rem;
+        height: 1.333rem;
+        border: 2px white solid;
+        background: none;
+        color: #fff;
+        appearance: none;
+        cursor: pointer;
+        &:hover {
+            color: $orange;
+            border-color: $orange;
+        }
+    }
+}
+
+
+.preloader {
+    display: none;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100vw;
+    height: 100vh;
+    background: black;
+    z-index: 999;
+    &__content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        gap: 3rem;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+    }
+    &__logo {
+        width: 10rem;
+    }
+    &__progress {
+        width: 250px;
+        border: 1px solid white;
+        div {
+            width: 0;
+            height: 3px;
+            background: #fff;
+        }
+    }
+}

@@ -1,0 +1,53 @@
+.header {
+    position: relative;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    border-bottom: 1px #333 solid;
+    background: black;
+    padding: 1rem 0;
+    z-index: 10;
+    &__logo {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        height: 70px;
+        img {
+            height: 100%;
+        }
+    }
+    &__burger {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: .667rem;
+        width: 50px;
+        height: 50px;
+        background: none;
+        border: none;
+        appearance: none;
+        cursor: pointer;
+        span {
+            width: 100%;
+            display: block;
+            height: 1px;
+            background: white;
+        }
+        &:hover {
+            span {
+                background: $orange;
+            }
+        }
+    }
+    &__socials {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+    }
+    &__social-link {
+        img {
+            width: 1.2rem;
+        }
+    }
+}
