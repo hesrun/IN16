@@ -581,7 +581,7 @@
                         triggerHook: 0.5
                     })
 					.setTween(boxIn)
-					.addIndicators({name: "thumbsIn"})
+					//.addIndicators({name: "thumbsIn"})
 					.addTo(controller);
 
             let videoInScene = new ScrollMagic
@@ -591,7 +591,7 @@
                         triggerHook: 0.7
                     })
 					.setTween(videoIn)
-					.addIndicators({name: "thumbsIn"})
+					//.addIndicators({name: "thumbsIn"})
 					.addTo(controller);
             
             let detailInScene = new ScrollMagic
@@ -601,7 +601,7 @@
                         triggerHook: 0.7
                     })
 					.setTween(detailIn)
-					.addIndicators({name: "thumbsIn"})
+					//.addIndicators({name: "thumbsIn"})
 					.addTo(controller);
 
             let functionsInScene = new ScrollMagic
@@ -658,14 +658,14 @@
                     
         })
 
-        // прелоадер
-        // $('body').addClass('locked');
-        // $('.preloader__progress > div').animate({
-        //     width: 100+'%'
-        // }, 5000, function() {
-        //     $('.preloader').fadeOut(500);
-        //     $('body').removeClass('locked');
-        // });
+        //прелоадер
+        $('body').addClass('locked');
+        $('.preloader__progress > div').animate({
+            width: 100+'%'
+        }, 5000, function() {
+            $('.preloader').fadeOut(500);
+            $('body').removeClass('locked');
+        });
 
 
         // меню
