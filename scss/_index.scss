@@ -1,6 +1,20 @@
 .sequence-scroll {
     position: relative;
     overflow-x: hidden;
+    @include md {
+        &:before {
+            content: "dfgfg";
+            display: block;
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(black, 0.8);
+            backdrop-filter: blur(6px);
+            z-index: 1;
+        }
+    }
 }
 .sequence-section {
     position: relative;
@@ -12,11 +26,17 @@
     }
     &__content {
         max-width: 33.333rem;
+        @include sm {
+            text-align: center;
+        }
         &_right {
             margin-left: auto;
         }
         &_align-right {
             text-align: right;
+            @include sm {
+                text-align: center;
+            }
         }
         &_full {
             max-width: 100%;
@@ -32,11 +52,19 @@
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 1rem;
+        @include sm {
+            max-width: 100%;
+            grid-template-columns: 1fr;
+        }
     }
     &__apps {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 1rem;
+        @include sm {
+            max-width: 100%;
+            grid-template-columns: 1fr;
+        }
     }
 }
 .honeycomb-bg:after {
@@ -52,6 +80,9 @@
     background-size: cover;
     background-position: bottom center;
     z-index: -1;
+    @include md {
+        display: none;
+    }
 }
 .gphg {
     margin: 5.333rem 0 -5.333rem;
@@ -61,6 +92,9 @@
     gap: 2rem;
     span {
         font-size: .8rem;
+    }
+    @include sm {
+        margin: 2rem 0 -2rem;
     }
 }
 
@@ -88,6 +122,9 @@
     display: grid;
     grid-template-columns: 1fr;
     gap: 2rem;
+    @include sm {
+        text-align: center;
+    }
     &__title {
         font-size: .8rem;
         text-transform: uppercase;
@@ -113,6 +150,10 @@
     span {
         font-size: .8rem;
     }
+    @include sm {
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 .logo-engraved {
     display: flex;
@@ -123,15 +164,30 @@
     img {
         width: 2.333rem;
     }
+    @include sm {
+        justify-content: center;
+    }
 }
 .functions-list {
     margin-top: 2rem;
     display: flex;
     justify-content: space-between;
+    @include md {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        gap: 4rem;
+    }
+    @include md {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
     &__image {
         height: 7.667rem;
         display: flex;
         align-items: center;
+        @include md {
+            justify-content: center;
+        }
     }
     &__title {
         margin-top: .667rem;
@@ -145,14 +201,29 @@
 }
 .preview-carusel {
     overflow: visible;
+    @include sm {
+        margin-bottom: 3rem;
+    }
     .swiper-slide {
         width: 33.333rem;
+        @include md {
+            width: 20rem;
+        }
+        @include xs {
+            width: 17rem;
+        }
     }
     .swiper-pagination {
         width: auto;
         left: auto;
         right: 0;
         top: -3rem;
+        @include sm {
+            right: 0;
+            left: 0;
+            top: auto;
+            bottom: -3.2rem;
+        }
     }
     .swiper-pagination-bullet {
         width: 1rem;
@@ -211,38 +282,83 @@
     position: relative;
     display: block;
     margin-left: 9rem;
+    @include sm {
+        display: inline;
+        margin: 0;
+    }
     &:before {
         content: url('../img/index/ampersand.svg');
         position: absolute;
         left: -6rem;
         top: -0.667rem;
+        @include sm {
+            display: none;
+        }
     }
+    
 }
 .order-section {
     position: relative;
     display: grid;
     grid-template-columns: 23.333rem 1fr 23.333rem;
+    @include lg {
+        grid-template-columns: 16.667rem 1fr 13.333rem;
+    }
+    @include md {
+        grid-template-columns: 1fr;
+    }
     &__product {
         text-align: center;
+        @include sm {
+            img {
+                width: 60%;
+            }
+        }
+    }
+    &__buy {
+        @include sm {
+            h2 br {
+                display: none;
+            }
+        }
     }
     &__price {
         margin: 3rem 0;
         display: grid;
         grid-template-columns: 1fr;
+        @include sm {
+            margin: 2rem 0;
+        }
     }
     &__price-summ {
         font-weight: 100;
         font-size: 4rem;
+        @include sm {
+            font-size: 3rem;
+        }
     }
     &__left {
         align-self: center;
+        @include sm {
+            text-align: center;
+        }
     }
     &__right {
         align-self: self-end;
         padding-bottom: 5rem;
+        @include sm {
+            text-align: center;
+            padding-bottom: 0rem;
+            p {
+                margin: 1rem 0;
+            }
+        }
     }
     &__fit {
         margin-top: 8rem;
+        @include sm {
+            margin-top: 3rem;
+        }
     }
     &__video {
         font-size: .8rem;
@@ -268,5 +384,8 @@
     transition: all 0.3s;
     &:hover {
         opacity: 0.5;
+    }
+    @include sm {
+        display: none;
     }
 }

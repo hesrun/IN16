@@ -50,6 +50,11 @@ h1 {
 h1:first-child {
   margin-top: 0px;
 }
+@media only screen and (max-width: 768px) {
+  h1 {
+    font-size: 1.6rem;
+  }
+}
 
 h2 {
   font-size: 40px;
@@ -58,9 +63,19 @@ h2 {
 h2:first-child {
   margin-top: 0px;
 }
+@media only screen and (max-width: 768px) {
+  h2 {
+    font-size: 1.6rem;
+  }
+}
 
 h3 {
   font-size: 20px;
+}
+@media only screen and (max-width: 768px) {
+  h3 {
+    font-size: 1.2rem;
+  }
 }
 
 p {
@@ -90,6 +105,17 @@ input, button, textarea, select {
 }
 .section-space_overflow {
   overflow: hidden;
+}
+@media only screen and (max-width: 768px) {
+  .section-space {
+    padding-top: 4rem;
+  }
+  .section-space:last-child {
+    padding-bottom: 4rem;
+  }
+  .section-space:first-child {
+    padding-top: 4rem;
+  }
 }
 
 /*!
@@ -4381,11 +4407,30 @@ input, button, textarea, select {
   height: 1px;
   background: #fff;
 }
+@media only screen and (max-width: 768px) {
+  .modal-fs a.close-modal:after, .modal-fs a.close-modal:before {
+    background: #FF7426;
+  }
+}
 .modal-fs a.close-modal:after {
   transform: rotate(45deg);
 }
 .modal-fs a.close-modal:before {
   transform: rotate(-45deg);
+}
+@media only screen and (max-width: 992px) {
+  .modal-fs a.close-modal {
+    right: 1rem;
+    left: auto;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .modal-fs a.close-modal {
+    width: 2rem;
+    height: 2rem;
+    border: 1px #FF7426 solid;
+    background: black;
+  }
 }
 .modal-fs__body {
   min-height: 100%;
@@ -4433,7 +4478,6 @@ input, button, textarea, select {
 }
 
 .preloader {
-  display: none;
   position: fixed;
   left: 0px;
   top: 0px;
@@ -4480,18 +4524,23 @@ input, button, textarea, select {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  height: 70px;
+  height: 4.667rem;
 }
 .header__logo img {
   height: 100%;
+}
+@media only screen and (max-width: 768px) {
+  .header__logo {
+    height: 2.667rem;
+  }
 }
 .header__burger {
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 0.667rem;
-  width: 50px;
-  height: 50px;
+  width: 3.333rem;
+  height: 3.333rem;
   background: none;
   border: none;
   -webkit-appearance: none;
@@ -4507,6 +4556,12 @@ input, button, textarea, select {
 }
 .header__burger:hover span {
   background: #FF7426;
+}
+@media only screen and (max-width: 768px) {
+  .header__burger {
+    width: 30px;
+    height: 30px;
+  }
 }
 .header__socials {
   display: flex;
@@ -4524,6 +4579,11 @@ input, button, textarea, select {
 .footer__links {
   display: flex;
   gap: 1rem;
+}
+@media only screen and (max-width: 576px) {
+  .footer__links {
+    margin: 2rem 0;
+  }
 }
 .footer__link {
   font-size: 0.8rem;
@@ -4553,19 +4613,37 @@ input, button, textarea, select {
 }
 .modal-nav__link {
   font-family: "MGJ";
-  font-size: 40px;
+  font-size: 2.667rem;
   text-decoration: none;
   color: #fff;
 }
 .modal-nav__link:hover {
   color: #FF7426;
 }
+@media only screen and (max-width: 768px) {
+  .modal-nav__link {
+    text-align: center;
+    font-size: 2rem;
+  }
+}
 .modal-nav__bottom {
   display: flex;
   align-items: center;
 }
+@media only screen and (max-width: 768px) {
+  .modal-nav__bottom {
+    flex-direction: column;
+    align-items: center;
+  }
+}
 .modal-nav__logo {
   margin-left: auto;
+}
+@media only screen and (max-width: 768px) {
+  .modal-nav__logo {
+    margin-left: 0;
+    width: 3rem;
+  }
 }
 .modal-nav__socials {
   display: flex;
@@ -4586,6 +4664,11 @@ input, button, textarea, select {
   font-size: 12px;
   gap: 2rem;
 }
+@media only screen and (max-width: 768px) {
+  .modal-nav__other-links {
+    margin: 2rem 0;
+  }
+}
 .modal-nav__other-links a {
   color: #fff;
   font-weight: 500;
@@ -4601,23 +4684,57 @@ input, button, textarea, select {
   grid-template-columns: 3fr 2fr;
   gap: 3rem 10rem;
 }
+@media only screen and (max-width: 992px) {
+  .modal-order {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
 .modal-order__bottom {
   grid-column: 2 span;
   display: grid;
   grid-template-columns: 3fr 2fr;
   gap: 3rem 10rem;
 }
+@media only screen and (max-width: 992px) {
+  .modal-order__bottom {
+    grid-column: 1;
+    grid-template-columns: 1fr auto;
+    gap: 0;
+  }
+}
 .modal-order__logo {
   margin-left: auto;
+}
+@media only screen and (max-width: 992px) {
+  .modal-order__logo {
+    width: 3rem;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .modal-order__logo {
+    display: none;
+  }
 }
 .modal-order__actions {
   display: flex;
   align-items: center;
 }
+@media only screen and (max-width: 768px) {
+  .modal-order__actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
 .modal-order__step {
   margin-left: auto;
   font-family: "MGJ";
   color: #383838;
+}
+@media only screen and (max-width: 768px) {
+  .modal-order__step {
+    display: none;
+  }
 }
 .modal-order__cart {
   margin-top: -2rem;
@@ -4671,6 +4788,13 @@ input, button, textarea, select {
   padding: 0 2rem;
   align-items: center;
 }
+@media only screen and (max-width: 768px) {
+  .modal-order__payments-item {
+    height: 3.5rem;
+    padding: 0 1rem;
+    font-size: 0.8rem;
+  }
+}
 .modal-order__payments-item:hover {
   background: rgba(255, 255, 255, 0.2);
 }
@@ -4684,10 +4808,32 @@ input, button, textarea, select {
   line-height: 1.333rem;
   padding: 10px 30px;
 }
+@media only screen and (max-width: 768px) {
+  .modal-order__status {
+    text-align: center;
+    display: block;
+    padding: 5px 1rem;
+  }
+}
 
 .sequence-scroll {
   position: relative;
   overflow-x: hidden;
+}
+@media only screen and (max-width: 992px) {
+  .sequence-scroll:before {
+    content: "dfgfg";
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    -webkit-backdrop-filter: blur(6px);
+            backdrop-filter: blur(6px);
+    z-index: 1;
+  }
 }
 
 .sequence-section {
@@ -4702,11 +4848,21 @@ input, button, textarea, select {
 .sequence-section__content {
   max-width: 33.333rem;
 }
+@media only screen and (max-width: 768px) {
+  .sequence-section__content {
+    text-align: center;
+  }
+}
 .sequence-section__content_right {
   margin-left: auto;
 }
 .sequence-section__content_align-right {
   text-align: right;
+}
+@media only screen and (max-width: 768px) {
+  .sequence-section__content_align-right {
+    text-align: center;
+  }
 }
 .sequence-section__content_full {
   max-width: 100%;
@@ -4722,10 +4878,22 @@ input, button, textarea, select {
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
 }
+@media only screen and (max-width: 768px) {
+  .sequence-section__btns {
+    max-width: 100%;
+    grid-template-columns: 1fr;
+  }
+}
 .sequence-section__apps {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
+}
+@media only screen and (max-width: 768px) {
+  .sequence-section__apps {
+    max-width: 100%;
+    grid-template-columns: 1fr;
+  }
 }
 
 .honeycomb-bg:after {
@@ -4742,6 +4910,11 @@ input, button, textarea, select {
   background-position: bottom center;
   z-index: -1;
 }
+@media only screen and (max-width: 992px) {
+  .honeycomb-bg:after {
+    display: none;
+  }
+}
 
 .gphg {
   margin: 5.333rem 0 -5.333rem;
@@ -4752,6 +4925,11 @@ input, button, textarea, select {
 }
 .gphg span {
   font-size: 0.8rem;
+}
+@media only screen and (max-width: 768px) {
+  .gphg {
+    margin: 2rem 0 -2rem;
+  }
 }
 
 .sequence-bg {
@@ -4780,6 +4958,11 @@ input, button, textarea, select {
   grid-template-columns: 1fr;
   gap: 2rem;
 }
+@media only screen and (max-width: 768px) {
+  .tech-params-list {
+    text-align: center;
+  }
+}
 .tech-params-list__title {
   font-size: 0.8rem;
   text-transform: uppercase;
@@ -4805,6 +4988,12 @@ input, button, textarea, select {
 .lamps-info span {
   font-size: 0.8rem;
 }
+@media only screen and (max-width: 768px) {
+  .lamps-info {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
 
 .logo-engraved {
   display: flex;
@@ -4816,16 +5005,39 @@ input, button, textarea, select {
 .logo-engraved img {
   width: 2.333rem;
 }
+@media only screen and (max-width: 768px) {
+  .logo-engraved {
+    justify-content: center;
+  }
+}
 
 .functions-list {
   margin-top: 2rem;
   display: flex;
   justify-content: space-between;
 }
+@media only screen and (max-width: 992px) {
+  .functions-list {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 4rem;
+  }
+}
+@media only screen and (max-width: 992px) {
+  .functions-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
 .functions-list__image {
   height: 7.667rem;
   display: flex;
   align-items: center;
+}
+@media only screen and (max-width: 992px) {
+  .functions-list__image {
+    justify-content: center;
+  }
 }
 .functions-list__title {
   margin-top: 0.667rem;
@@ -4840,14 +5052,37 @@ input, button, textarea, select {
 .preview-carusel {
   overflow: visible;
 }
+@media only screen and (max-width: 768px) {
+  .preview-carusel {
+    margin-bottom: 3rem;
+  }
+}
 .preview-carusel .swiper-slide {
   width: 33.333rem;
+}
+@media only screen and (max-width: 992px) {
+  .preview-carusel .swiper-slide {
+    width: 20rem;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .preview-carusel .swiper-slide {
+    width: 17rem;
+  }
 }
 .preview-carusel .swiper-pagination {
   width: auto;
   left: auto;
   right: 0;
   top: -3rem;
+}
+@media only screen and (max-width: 768px) {
+  .preview-carusel .swiper-pagination {
+    right: 0;
+    left: 0;
+    top: auto;
+    bottom: -3.2rem;
+  }
 }
 .preview-carusel .swiper-pagination-bullet {
   width: 1rem;
@@ -4909,11 +5144,22 @@ input, button, textarea, select {
   display: block;
   margin-left: 9rem;
 }
+@media only screen and (max-width: 768px) {
+  .add-amp {
+    display: inline;
+    margin: 0;
+  }
+}
 .add-amp:before {
   content: url("../img/index/ampersand.svg");
   position: absolute;
   left: -6rem;
   top: -0.667rem;
+}
+@media only screen and (max-width: 768px) {
+  .add-amp:before {
+    display: none;
+  }
 }
 
 .order-section {
@@ -4921,27 +5167,76 @@ input, button, textarea, select {
   display: grid;
   grid-template-columns: 23.333rem 1fr 23.333rem;
 }
+@media only screen and (max-width: 1200px) {
+  .order-section {
+    grid-template-columns: 16.667rem 1fr 13.333rem;
+  }
+}
+@media only screen and (max-width: 992px) {
+  .order-section {
+    grid-template-columns: 1fr;
+  }
+}
 .order-section__product {
   text-align: center;
+}
+@media only screen and (max-width: 768px) {
+  .order-section__product img {
+    width: 60%;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .order-section__buy h2 br {
+    display: none;
+  }
 }
 .order-section__price {
   margin: 3rem 0;
   display: grid;
   grid-template-columns: 1fr;
 }
+@media only screen and (max-width: 768px) {
+  .order-section__price {
+    margin: 2rem 0;
+  }
+}
 .order-section__price-summ {
   font-weight: 100;
   font-size: 4rem;
 }
+@media only screen and (max-width: 768px) {
+  .order-section__price-summ {
+    font-size: 3rem;
+  }
+}
 .order-section__left {
   align-self: center;
+}
+@media only screen and (max-width: 768px) {
+  .order-section__left {
+    text-align: center;
+  }
 }
 .order-section__right {
   align-self: self-end;
   padding-bottom: 5rem;
 }
+@media only screen and (max-width: 768px) {
+  .order-section__right {
+    text-align: center;
+    padding-bottom: 0rem;
+  }
+  .order-section__right p {
+    margin: 1rem 0;
+  }
+}
 .order-section__fit {
   margin-top: 8rem;
+}
+@media only screen and (max-width: 768px) {
+  .order-section__fit {
+    margin-top: 3rem;
+  }
 }
 .order-section__video {
   font-size: 0.8rem;
@@ -4968,6 +5263,11 @@ input, button, textarea, select {
 }
 .fit-btn:hover {
   opacity: 0.5;
+}
+@media only screen and (max-width: 768px) {
+  .fit-btn {
+    display: none;
+  }
 }
 
 .start-links b {
@@ -5107,24 +5407,6 @@ input, button, textarea, select {
   }
 }
 @media (max-width: 768px) {
-  h1 {
-    font-size: 32px;
-  }
-  h2 {
-    font-size: 32px;
-  }
-  h3 {
-    font-size: 18px;
-  }
-  .section-space {
-    padding-top: 4rem;
-  }
-  .section-space:last-child {
-    padding-bottom: 4rem;
-  }
-  .section-space:first-child {
-    padding-top: 4rem;
-  }
   .steps-grid {
     grid-template-columns: 1fr;
     gap: 30px;
@@ -5163,26 +5445,6 @@ input, button, textarea, select {
   }
   .step-name__title {
     font-size: 18px;
-  }
-}
-@media (max-width: 768px) {
-  h1 {
-    font-size: 32px;
-  }
-  h2 {
-    font-size: 32px;
-  }
-  h3 {
-    font-size: 18px;
-  }
-  .section-space {
-    padding-top: 4rem;
-  }
-  .section-space:last-child {
-    padding-bottom: 4rem;
-  }
-  .section-space:first-child {
-    padding-top: 4rem;
   }
 }
 @media (min-width: 768px) {

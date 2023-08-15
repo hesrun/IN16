@@ -4,6 +4,9 @@
     &__links {
         display: flex;
         gap: 1rem;
+        @include xs {
+            margin: 2rem 0;
+        }
     }
     &__link {
         font-size: .8rem;

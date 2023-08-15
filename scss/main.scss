@@ -37,6 +37,11 @@ h1 {
     &:first-child {
         margin-top: 0px;
     }
+    @include sm {
+        font-size: 1.6rem;
+    }
+    
+    
 }
 h2 {
     font-size: 40px;
@@ -44,9 +49,16 @@ h2 {
     &:first-child {
         margin-top: 0px;
     }
+    @include sm {
+        font-size: 1.6rem;
+    }
+    
 }
 h3 {
     font-size: 20px;
+    @include sm {
+        font-size: 1.2rem;
+    }
 }
 
 p {
@@ -76,6 +88,15 @@ input,button,textarea,select {
     &_overflow {
         overflow: hidden;
     }
+    @include sm {
+        padding-top: 4rem;
+        &:last-child {
+            padding-bottom: 4rem;
+        }
+        &:first-child {
+            padding-top: 4rem;
+        }
+    }
 }
 
 @import "_grid.scss";
@@ -86,27 +107,6 @@ input,button,textarea,select {
 @import "_index.scss";
 @import "_faq.scss";
 
-
-@media (max-width: 768px) {
-    h1 {
-        font-size: 32px;
-    }
-    h2 {
-        font-size: 32px;
-    }
-    h3 {
-        font-size: 18px;
-    }
-    .section-space {
-        padding-top: 4rem;
-        &:last-child {
-            padding-bottom: 4rem;
-        }
-        &:first-child {
-            padding-top: 4rem;
-        }
-    }
-}
 
 @media (min-width: 768px) {
     .container-fluid {

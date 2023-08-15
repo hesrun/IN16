@@ -331,7 +331,7 @@
         </div>
     </div>
     <div class="footer">
-        <div class="container-fluid d-flex justify-content-between align-items-center">
+        <div class="container-fluid d-flex flex-column flex-md-row justify-content-between align-items-center">
             <div class="footer__logo">
                 <a href="">
                     <img src="img/logos/logo-footer.svg" alt="">
@@ -658,13 +658,13 @@
         })
 
         //прелоадер
-        // $('body').addClass('locked');
-        // $('.preloader__progress > div').animate({
-        //     width: 100+'%'
-        // }, 15000, function() {
-        //     $('.preloader').fadeOut(500);
-        //     $('body').removeClass('locked');
-        // });
+        $('body').addClass('locked');
+        $('.preloader__progress > div').animate({
+            width: 100+'%'
+        }, 15000, function() {
+            $('.preloader').fadeOut(500);
+            $('body').removeClass('locked');
+        });
 
 
         // меню

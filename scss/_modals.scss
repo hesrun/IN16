@@ -11,19 +11,31 @@
     }
     &__link {
         font-family: $mgj;
-        font-size: 40px;
+        font-size: 2.667rem;
         text-decoration: none;
         color: #fff;
         &:hover {
             color: $orange;
         }
+        @include sm {
+            text-align: center;
+            font-size: 2rem;
+        }
     }
     &__bottom {
         display: flex;
         align-items: center;
+        @include sm {
+            flex-direction: column;
+            align-items: center;
+        }
     }
     &__logo {
-        margin-left: auto;       
+        margin-left: auto;
+        @include sm {
+            margin-left: 0;
+            width: 3rem;
+        }  
     }
     &__socials {
         display: flex;
@@ -43,6 +55,9 @@
         display: flex;
         font-size: 12px;
         gap: 2rem;
+        @include sm {
+            margin: 2rem 0;
+        }  
         a {
             color: #fff;
             font-weight: 500;
@@ -59,23 +74,45 @@
     display: grid;
     grid-template-columns: 3fr 2fr;
     gap: 3rem 10rem;
+    @include md {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
     &__bottom {
         grid-column: 2 span;
         display: grid;
         grid-template-columns: 3fr 2fr;
         gap: 3rem 10rem;
+        @include md {
+            grid-column: 1;
+            grid-template-columns: 1fr auto;
+            gap: 0;
+        }
     }
     &__logo {
         margin-left: auto;
+        @include md {
+            width: 3rem;
+        }
+        @include sm {
+            display: none;
+        }
     }
     &__actions {
         display: flex;
         align-items: center;
+        @include sm {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
     }
     &__step {
         margin-left: auto;
         font-family: $mgj;
         color: #383838;
+        @include sm {
+            display: none;
+        }
     }
     &__cart {
         margin-top: -2rem;
@@ -128,6 +165,11 @@
         height: 4.667rem;
         padding: 0 2rem;
         align-items: center;
+        @include sm {
+            height: 3.5rem;
+            padding: 0 1rem;
+            font-size: .8rem;
+        }
         &:hover {
             background: rgba(white,0.2);
         }
@@ -141,5 +183,10 @@
         font-weight: 500;
         line-height: 1.333rem;
         padding: 10px 30px;
+        @include sm {
+            text-align: center;
+            display: block;
+            padding: 5px 1rem;
+        }
     }
 }

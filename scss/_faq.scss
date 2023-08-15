@@ -140,24 +140,6 @@
 }
 
 @media (max-width: 768px) {
-    h1 {
-        font-size: 32px;
-    }
-    h2 {
-        font-size: 32px;
-    }
-    h3 {
-        font-size: 18px;
-    }
-    .section-space {
-        padding-top: 4rem;
-        &:last-child {
-            padding-bottom: 4rem;
-        }
-        &:first-child {
-            padding-top: 4rem;
-        }
-    }
     .steps-grid {
         grid-template-columns: 1fr;
         gap: 30px;
