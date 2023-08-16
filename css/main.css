@@ -4867,7 +4867,6 @@ input, button, textarea, select {
 .sequence-section__content_full {
   max-width: 100%;
   width: 100%;
-  align-self: flex-start;
 }
 .sequence-section__content_top {
   margin-bottom: 15%;
