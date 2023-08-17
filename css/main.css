@@ -4875,6 +4875,12 @@ input, button, textarea, select {
   }
 }
 
+/* ------------------------------ modal-view360 ----------------------------- */
+.modal-view360__container {
+  width: 923px;
+  height: 923px;
+}
+
 .sequence-scroll {
   position: relative;
   overflow-x: hidden;
