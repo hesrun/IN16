@@ -391,6 +391,8 @@
     }
 }
 .fit-btn {
+    border: none;
+    background: none;
     font-size: .8rem;
     cursor: pointer;
     display: inline-flex;
@@ -398,6 +400,7 @@
     align-items: flex-start;
     gap: 1rem;
     color: white;
+    appearance: none;
     transition: all 0.3s;
     &:hover {
         color: $orange;

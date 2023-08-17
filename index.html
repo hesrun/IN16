@@ -301,10 +301,10 @@
                             <p>Available in a limited edition of 999 pieces, the IN-16 Nixie by Gelfman comes in a spectacular space rocket-inspired presentation case.</p>
                             <button class="order-btn c-button c-button_orange c-button_filled">MAKE AN ORDER</button>
                         </div>
-                        <a class="fit-btn order-section__fit">
+                        <button id="fitOpen" class="fit-btn order-section__fit">
                             <span class="icon icon-ico-hand"></span>
                             TRY ON HAND
-                        </a>
+                        </button>
                     </div>
                     <div class="order-section__product">
                         <img src="img/index/watch-box.png" alt="">
@@ -725,9 +725,13 @@
                 fadeDuration: 300,
             });
         })
-        $("#fit").modal({
-            fadeDuration: 300,
-        });
+
+        $('#fitOpen').click(function(){
+            $("#fit").modal({
+                fadeDuration: 300,
+            });
+        })
+        
 
         
 

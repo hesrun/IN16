@@ -5327,6 +5327,8 @@ input, button, textarea, select {
 }
 
 .fit-btn {
+  border: none;
+  background: none;
   font-size: 0.8rem;
   cursor: pointer;
   display: inline-flex;
@@ -5334,6 +5336,9 @@ input, button, textarea, select {
   align-items: flex-start;
   gap: 1rem;
   color: white;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   transition: all 0.3s;
 }
 .fit-btn:hover {
