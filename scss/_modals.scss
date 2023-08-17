@@ -230,8 +230,23 @@
 
 /* ------------------------------ modal-view360 ----------------------------- */
 .modal-view360 {
+    height: 100%;
+    display: flex;
+    overflow: hidden;
     &__container {
-        width: 923px;
-        height: 923px;
+        margin: auto;
+        max-width: 600px;
+    }
+    .cloudimage-360-loader {
+        display: none;
+    }
+    .cloudimage-360-view-360-icon {
+        background: rgba($orange, 0.8);
+        border: none;
+        box-shadow: none;
+        backdrop-filter: blur(5px);
+        color: black;
+        font-size: 2rem;
+        font-weight: 600;
     }
 }

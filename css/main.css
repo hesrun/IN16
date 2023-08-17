@@ -4876,9 +4876,27 @@ input, button, textarea, select {
 }
 
 /* ------------------------------ modal-view360 ----------------------------- */
+.modal-view360 {
+  height: 100%;
+  display: flex;
+  overflow: hidden;
+}
 .modal-view360__container {
-  width: 923px;
-  height: 923px;
+  margin: auto;
+  max-width: 600px;
+}
+.modal-view360 .cloudimage-360-loader {
+  display: none;
+}
+.modal-view360 .cloudimage-360-view-360-icon {
+  background: rgba(255, 116, 38, 0.8);
+  border: none;
+  box-shadow: none;
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  color: black;
+  font-size: 2rem;
+  font-weight: 600;
 }
 
 .sequence-scroll {
@@ -5208,10 +5226,26 @@ input, button, textarea, select {
   background: none;
   border: none;
   cursor: pointer;
+  color: white;
   transition: all 0.3s;
 }
 .preview-carusel__360:hover {
-  opacity: 0.5;
+  color: #FF7426;
+}
+.preview-carusel__360 svg {
+  width: 70px;
+  height: auto;
+}
+@media only screen and (max-width: 768px) {
+  .preview-carusel__360 svg {
+    width: 50px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .preview-carusel__360 {
+    bottom: 0.5rem;
+    left: 0.5rem;
+  }
 }
 
 .add-amp {
