@@ -58,9 +58,20 @@
         }
     }
     &__apps {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 1rem;
+        align-items: center;
+        justify-content: flex-end;
+        display: flex;
+        gap: 2rem;
+        a {
+            font-size: 1.333rem;
+            color: white;
+            &:hover {
+                color: $orange;
+            }
+        }
+        .icon-ico-apple {
+            font-size: 1.6rem;
+        }
         @include sm {
             max-width: 100%;
             grid-template-columns: 1fr;
@@ -356,6 +367,9 @@
     }
     &__fit {
         margin-top: 8rem;
+        .icon {
+            font-size: 3rem;
+        }
         @include sm {
             margin-top: 3rem;
         }
@@ -368,8 +382,11 @@
         gap: .5rem;
         color: white;
         transition: all 0.3s;
+        span {
+            font-size: 1rem;
+        }
         &:hover {
-            opacity: 0.5;
+            color: $orange;
         }
     }
 }
@@ -383,7 +400,7 @@
     color: white;
     transition: all 0.3s;
     &:hover {
-        opacity: 0.5;
+        color: $orange;
     }
     @include sm {
         display: none;

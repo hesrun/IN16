@@ -3,15 +3,15 @@
 .modal-nav {
     display: flex;
     flex-direction: column;
-    gap: 4rem;
+    gap: 60px;
     &__links {
         display: flex;
         flex-direction: column;
-        gap: 1rem;
+        gap: 15px;
     }
     &__link {
         font-family: $mgj;
-        font-size: 2.667rem;
+        font-size: 40.005px;
         text-decoration: none;
         color: #fff;
         &:hover {
@@ -19,7 +19,7 @@
         }
         @include sm {
             text-align: center;
-            font-size: 2rem;
+            font-size: 30px;
         }
     }
     &__bottom {
@@ -34,29 +34,27 @@
         margin-left: auto;
         @include sm {
             margin-left: 0;
-            width: 3rem;
+            width: 45px;
         }  
     }
     &__socials {
         display: flex;
-        gap: 2rem;
+        gap: 30px;
     }
     &__social-link {
-        width: 1.6rem;
+        font-size: 19.995px;
+        color: white;
         &:hover {
-            opacity: 0.5;
-        }
-        img {
-            width: 100%;
+            color: $orange;
         }
     }
     &__other-links {
-        margin-left: 4rem;
+        margin-left: 60px;
         display: flex;
-        font-size: 12px;
-        gap: 2rem;
+        font-size: .8rem;
+        gap: 30px;
         @include sm {
-            margin: 2rem 0;
+            margin: 30px 0;
         }  
         a {
             color: #fff;
@@ -73,16 +71,16 @@
 .modal-order {
     display: grid;
     grid-template-columns: 3fr 2fr;
-    gap: 3rem 10rem;
+    gap: 45px 150px;
     @include md {
         grid-template-columns: 1fr;
-        gap: 3rem;
+        gap: 45px;
     }
     &__bottom {
         grid-column: 2 span;
         display: grid;
         grid-template-columns: 3fr 2fr;
-        gap: 3rem 10rem;
+        gap: 45px 150px;
         @include md {
             grid-column: 1;
             grid-template-columns: 1fr auto;
@@ -92,7 +90,7 @@
     &__logo {
         margin-left: auto;
         @include md {
-            width: 3rem;
+            width: 45px;
         }
         @include sm {
             display: none;
@@ -115,14 +113,14 @@
         }
     }
     &__cart {
-        margin-top: -2rem;
+        margin-top: -30px;
     }
     &__cart-line {
-        min-height: 4.4rem;
+        min-height: 66px;
         display: flex;
         align-items: center;
-        gap: 2rem;
-        border-bottom: 1px $line solid;
+        gap: 30px;
+        border-bottom: .067rem $line solid;
         span {
             margin-right: auto;
         }
@@ -135,25 +133,25 @@
     }
     &__ship-note {
         display: block;
-        font-size: 12px;
-        margin-top: 2rem;
+        font-size: .8rem;
+        margin-top: 30px;
     }
     &__next-step {
-        width: 15rem
+        width: 225px
     }
     &__2cols {
         display: grid;
         align-items: end;
         grid-template-columns: 1fr 1fr;
-        gap: 2rem;
+        gap: 30px;
     }
     &__payments {
         display: grid;
         grid-template-columns: 1fr;
-        gap: 1rem;
+        gap: 15px;
     }
     &__final-quant {
-        margin-right: 2rem;
+        margin-right: 30px;
     }
     &__payments-item {
         color: white;
@@ -161,32 +159,71 @@
         text-transform: uppercase;
         display: flex;
         justify-content: space-between;
-        border: 1px white solid;
-        height: 4.667rem;
-        padding: 0 2rem;
+        border: .067rem white solid;
+        height: 70.005px;
+        padding: 0 30px;
         align-items: center;
         @include sm {
-            height: 3.5rem;
-            padding: 0 1rem;
-            font-size: .8rem;
+            height: 52.5px;
+            padding: 0 15px;
+            font-size: 12px;
         }
         &:hover {
             background: rgba(white,0.2);
         }
     }
     &__status {
-        margin-top: 3rem;
+        margin-top: 45px;
         display: inline-block;
-        border: 2px dashed $orange;
+        border: .133rem dashed $orange;
         color: $orange;
         text-transform: uppercase;
         font-weight: 500;
-        line-height: 1.333rem;
-        padding: 10px 30px;
+        line-height: 19.995px;
+        padding: .667rem 2rem;
         @include sm {
             text-align: center;
             display: block;
-            padding: 5px 1rem;
+            padding: .333rem 15px;
         }
     }
+}
+
+/* -------------------------------- mobal-fit ------------------------------- */
+.mobal-fit {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    &__hand {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(calc(-50% - 25px),calc(-50% + 5px));
+        @include sm {
+            display: none;
+        }
+    }
+    &__watch {
+        position: absolute;
+        z-index: 1
+    }
+    &__video {
+        display: none;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        @include sm {
+            display: block;
+        }
+    }
+    
 }

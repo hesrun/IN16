@@ -7,6 +7,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/10.1.0/swiper-bundle.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.2/jquery.modal.min.css">
+    <link href="https://cdn.iconly.io/kits/RoNrgJhswAfF/v_9a48bc8/iconly.min.css" rel="stylesheet"/>
     <link rel="stylesheet" href="css/main.css">
 </head>
 
@@ -21,11 +22,11 @@
                 <img src="img/logos/logo-engraved.gif" alt="">
             </a>
             <div class="header__socials">
-                <a href="" class="header__social-link">
-                    <img src="img/icons/ico-whatsapp.svg" alt="">
+                <a href="" class="header__social-link icon-ico-instagram">
                 </a>
-                <a href="" class="header__social-link">
-                    <img src="img/icons/ico-telegram.svg" alt="">
+                <a href="" class="header__social-link icon-ico-whatsapp">
+                </a>
+                <a href="" class="header__social-link icon-ico-telegram">
                 </a>
             </div>
         </div>
@@ -159,17 +160,13 @@
             </div>
             <div class="sequence-section">
                 <div class="container-fluid sequence-section__container">
-                    <div id="softIn" class="sequence-section__content sequence-section__content_right sequence-section__content_top">
+                    <div id="softIn" class="sequence-section__content sequence-section__content_right sequence-section__content_top sequence-section__content_align-right">
                         <h2>SOFTWARE</span></h2>
                         <p>IN-16 Nixie watch can be fully controlled and programmed via computer. User can choose the preferred Nixie tubes’ backlight, adjust the brightness, any many more. </p>
                         <div class="sequence-section__apps">
-                            <a href="" class="c-button c-button_white c-button_outline c-button_icon">
-                                <img src="img/index/win-icon.svg" alt="">
-                                Windows
+                            <a href="" class="icon-ico-apple">
                             </a>
-                            <a href="" class="c-button c-button_white c-button_outline c-button_icon">
-                                <img src="img/index/mac-icon.svg" alt="">
-                                Mac OS NOW
+                            <a href="" class="icon-ico-win">
                             </a>
                         </div>
                     </div>
@@ -305,7 +302,7 @@
                             <button class="order-btn c-button c-button_orange c-button_filled">MAKE AN ORDER</button>
                         </div>
                         <a class="fit-btn order-section__fit">
-                            <img src="img/icons/ico-hand.svg" alt="">
+                            <span class="icon icon-ico-hand"></span>
                             TRY ON HAND
                         </a>
                     </div>
@@ -321,7 +318,7 @@
                             </p>
                             
                             <a href="" class="order-section__video">
-                                <img src="img/icons/ico-video-cam.svg" alt="">
+                                <span class="icon icon-ico-video-cam"></span>
                                 WATCH VIDEO
                             </a>
                         </div>
@@ -360,14 +357,11 @@
                     </div>
                     <div class="modal-nav__bottom">
                         <div class="modal-nav__socials">
-                            <a href="" class="modal-nav__social-link">
-                                <img src="img/icons/ico-instagram.svg" alt="">
+                            <a href="" class="modal-nav__social-link icon-ico-instagram">
                             </a>
-                            <a href="" class="modal-nav__social-link">
-                                <img src="img/icons/ico-whatsapp.svg" alt="">
+                            <a href="" class="modal-nav__social-link icon-ico-whatsapp">
                             </a>
-                            <a href="" class="modal-nav__social-link">
-                                <img src="img/icons/ico-telegram.svg" alt="">
+                            <a href="" class="modal-nav__social-link icon-ico-telegram">
                             </a>
                         </div>
                         <div class="modal-nav__other-links">
@@ -387,11 +381,8 @@
                 <div class="modal-order">
                     <div class="modal-order__user-data">
                         <h2>PERSONAL</h2>
-                        <h2 style="display: none">DELIVERY</h2>
-                        <h2 style="display: none">PAYMENT</h2>
-                        <h2 style="display: none">THANK YOU</h2>
                         <!-- -------------------- поля для перого шага PERSONAL -------------------- -->
-                        <div class="modal-order__form">
+                        <div data-step="1" class="modal-order__form">
                             <div class="c-input">
                                 <input type="text" class="c-input__field" placeholder="FIRST & LAST Name">
                             </div>
@@ -403,7 +394,7 @@
                             </div>
                         </div>
                         <!-- -------------------- поля для второго шага PERSONAL -------------------- -->
-                        <div style="display: none" class="modal-order__form">
+                        <div data-step="2" style="display: none" class="modal-order__form">
                             <div class="c-input">
                                 <input type="text" class="c-input__field" placeholder="COUNTRY">
                             </div>
@@ -423,7 +414,7 @@
                             </div>
                         </div>
                         <!-- -------------------- поля для третьего шага PAYMENT -------------------- -->
-                        <div style="display: none" class="modal-order__form">
+                        <div data-step="3" style="display: none" class="modal-order__form">
                             <div class="modal-order__payments">
                                 <a href="" class="modal-order__payments-item">
                                     <img src="img/payments/pay-cards.svg" alt="">
@@ -444,7 +435,7 @@
                             </div>
                         </div>
                         <!-- -------------------- поля для Последнего шага  THANK YOU-------------------- -->
-                        <div style="display: none" class="modal-order__form">
+                        <div data-step="4" style="display: none" class="modal-order__form">
                             <p>We have started preparing your order for shipment. In the near future, you will receive a letter about the delivery process. If you have any questions about the order, please contact us.</p>
                             <div class="c-textarea">
                                 <label for="" class="c-textarea__label">ORDER NOTES:</label>
@@ -481,12 +472,12 @@
                     </div>
                     <div class="modal-order__bottom">
                         <div class="modal-order__actions">
-                            <a href="" class="modal-order__next-step c-button c-button_white c-button_outline">
+                            <button id="nextStep" class="modal-order__next-step c-button c-button_white c-button_outline">
                                 NEXT
-                            </a>
-                            <a href="" class="c-button c-button_clear">
+                            </button>
+                            <button id="prevStep" class="c-button c-button_clear">
                                 back
-                            </a>
+                            </button>
 
                             <div class="modal-order__step">
                                 step 1 of 3
@@ -497,6 +488,14 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div id="fit" class="modal modal-fs">
+        <div class="mobal-fit">
+            <img src="img/index/fit-hand.svg" alt="" class="mobal-fit__hand">
+            <img src="img/index/fit-watch.png" alt="" class="mobal-fit__watch">
+            <video id="videoStream" class="mobal-fit__video" autoplay="true"></video>
+        </div>
+        
     </div>
     <div class="preloader">
         <div class="preloader__content">
@@ -517,6 +516,36 @@
     <script>
 
         $(document).ready(function () {
+
+            const constraints = {
+                audio: false,
+                video: {
+                    width: {
+                        min: 320,
+                    },
+                    height: {
+                        min: 200,
+                    },
+                    facingMode: 'environment'
+                }
+            };
+            const video = document.querySelector("#videoStream");
+
+            if (window.matchMedia('(max-width: 1024px)').matches) {
+                $('#fit').on($.modal.OPEN, function(event, modal) {
+                    navigator.mediaDevices.getUserMedia(constraints).then((mediaStream) => {
+                        video.srcObject = mediaStream;
+                        video.onloadedmetadata = () => {
+                            video.play();
+                        };
+                    })
+                    .catch((err) => {
+                        // always check for errors at the end.
+                        console.error(`${err.name}: ${err.message}`);
+                    });
+                });
+            } else {
+            }
 
             var controller = new ScrollMagic.Controller();
 
@@ -610,7 +639,7 @@
                         triggerHook: 0.9
                     })
 					.setTween(functionsIn)
-					.addIndicators({name: "functions-list__item"})
+					//.addIndicators({name: "functions-list__item"})
 					.addTo(controller);
                     
             let caseInScene = new ScrollMagic
@@ -627,7 +656,7 @@
                     .Scene({
                         triggerElement: "#softIn",
                         duration: 400,
-                        triggerHook: 0.7
+                        triggerHook: 0.9
                     })
 					.setTween(softIn)
 					//.addIndicators({name: "1 (duration: 300)"})
@@ -652,11 +681,27 @@
 					.setTween(strapIn)
 					//.addIndicators({name: "1 (duration: 300)"})
 					.addTo(controller);
-
-
-                    
         })
 
+        var stepNum = 1;
+
+        $('#nextStep').click(function(){
+            if (stepNum < 4 ) {
+                stepNum++;
+                $('.modal-order__form').hide();
+                $("[data-step="+stepNum+"]").show();
+            }
+        })
+        $('#prevStep').click(function(){
+            if (stepNum > 1 ) {
+                stepNum--;
+                $('.modal-order__form').hide();
+                $("[data-step="+stepNum+"]").show();
+            }
+        })
+
+        
+        
         //прелоадер
         // $('body').addClass('locked');
         // $('.preloader__progress > div').animate({
@@ -680,6 +725,11 @@
                 fadeDuration: 300,
             });
         })
+        $("#fit").modal({
+            fadeDuration: 300,
+        });
+
+        
 
         
 

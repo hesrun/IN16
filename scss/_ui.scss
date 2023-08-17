@@ -22,6 +22,7 @@
     appearance: none;
     border: none;
     cursor: pointer;
+    transition: all 0.3s;
     &_clear {
         font-size: 12px;
         &:hover {
@@ -29,6 +30,7 @@
         }
     }
     &_white {
+        border: 2px white solid;
         &#{$root}_filled {
             color: black;
             background: white;
@@ -36,18 +38,26 @@
         &#{$root}_outline {
             color: white;
             background: black;
-            border: 2px white solid;
+            &:hover {
+                background: white;
+                color: black;
+            }
         }
     }
     &_orange {
+        border: 2px $orange solid;
         &#{$root}_filled {
             color: black;
             background: $orange;
+            &:hover {
+                background: black;
+                color: $orange;
+            }
         }
         &#{$root}_outline {
             color: white;
-            background: orange;
-            border: 2px orange solid;
+            background: $orange;
+            
         }
     }
     &_full {
