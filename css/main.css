@@ -5307,7 +5307,7 @@ input, button, textarea, select {
 }
 @media only screen and (max-width: 768px) {
   .order-section__fit {
-    margin-top: 3rem;
+    margin: 2rem 0;
   }
 }
 .order-section__video {
@@ -5346,7 +5346,7 @@ input, button, textarea, select {
 }
 @media only screen and (max-width: 768px) {
   .fit-btn {
-    display: none;
+    align-items: center;
   }
 }
 

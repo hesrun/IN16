@@ -371,7 +371,7 @@
             font-size: 3rem;
         }
         @include sm {
-            margin-top: 3rem;
+            margin: 2rem 0;
         }
     }
     &__video {
@@ -406,6 +406,6 @@
         color: $orange;
     }
     @include sm {
-        display: none;
+        align-items: center;
     }
 }
