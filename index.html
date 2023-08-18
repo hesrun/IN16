@@ -244,11 +244,11 @@
                     <div class="swiper-pagination"></div>
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
-                            <div class="preview-carusel__thumb">
+                            <div class="preview-carusel__thumb" id="open360">
                                 <div class="preview-carusel__image">
                                     <img src="img/index/detail/detail-1.jpg" alt="">
                                 </div>
-                                <button id="open360" class="preview-carusel__360">
+                                <div class="preview-carusel__360">
                                     <svg width="92" height="103" viewBox="0 0 92 103" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path
@@ -272,8 +272,7 @@
                                         <path d="M35.7657 22.4734L33.3467 31.6582L43.5497 29.5511" stroke="currentColor"
                                             stroke-linecap="round" stroke-linejoin="round" />
                                     </svg>
-
-                                </button>
+                                </div>
                             </div>
                         </div>
                         <div class="swiper-slide">
@@ -545,7 +544,7 @@
                         </div>
                     </div>
                     <div class="modal-order__order-data">
-                        <h2>ORDER</h2>
+                        <h3>ORDER</h3>
                         <div class="modal-order__cart">
                             <div class="modal-order__cart-line">
                                 <span>IN-16 watches</span>
@@ -631,6 +630,7 @@
             </div>
         </div>
     </div>
+
     <script src="js/smooth-scroll.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/10.1.0/swiper-bundle.min.js"></script>
@@ -665,12 +665,10 @@
                 },
             });
 
-            // const ActiveIndex =  window.CI360.getActiveIndexByID('element_id')
-            // ActiveIndex.play()
-            // ActiveIndex.stop()
-
             //масштаб часов
+
             let scale = 1;
+
             $('.mobal-fit__scale-btn').click(function(){
                 if ($(this).hasClass('mobal-fit__scale-btn_plus')) {
                     
@@ -699,6 +697,7 @@
                     facingMode: 'environment'
                 }
             };
+
             const video = document.querySelector("#videoStream");
 
             if (window.matchMedia('(max-width: 1024px)').matches) {
@@ -708,55 +707,9 @@
                         video.onloadedmetadata = () => {
                             video.play();
                         };
-                    })
-                        .catch((err) => {
-                            // always check for errors at the end.
-                            console.error(`${err.name}: ${err.message}`);
-                        });
-                });
-            }
-
-            if (window.matchMedia('(min-width: 768px)').matches) {
-                // секвенции
-                $(document).ready(function () {
-
-                    let imageCount = 249;
-
-                    for (let i = 0; i <= imageCount; i++) {
-                        $('.sequence-bg').append('<img src="/img/sequence/IN_16_' + (i).toString().padStart(5, '0') + '.png" />')
-                    }
-
-                    let winH = $(window).height();
-                    let containerHeight = $('.sequence-scroll').height() - winH;
-                    let factor = Number((containerHeight / imageCount).toFixed(0));
-                    let ScTop = $(window).scrollTop();
-                    let currentImage = 0;
-
-                    function Animate() {
-                        currentImage = Number((ScTop / factor).toFixed(0));
-                        if (currentImage < imageCount) {
-                            $('.sequence-bg img').hide();
-                            $('.sequence-bg img').eq(currentImage).show();
-                        } else {
-
-                            $('.sequence-bg img').eq(imageCount - 1).show();
-                        }
-
-
-                    }
-
-                    Animate();
-
-                    $(window).bind('scroll', function () {
-                        ScTop = $(window).scrollTop();
-                        if (ScTop >= containerHeight) {
-                            $('.sequence-bg').addClass('stop')
-                        } else {
-                            $('.sequence-bg').removeClass('stop')
-                        }
-                        Animate();
+                    }).catch((err) => {
+                        console.error(`${err.name}: ${err.message}`);
                     });
-
                 });
             }
 
@@ -945,98 +898,139 @@
                 .setTween(strapIn)
                 //.addIndicators({name: "1 (duration: 300)"})
                 .addTo(controller);
+
+
+            //шаги
+        
+            var stepNum = 1;
+
+            $('#nextStep').click(function () {
+                if (stepNum < 4) {
+                    stepNum++;
+                    $('.modal-order__form').hide();
+                    $("[data-step=" + stepNum + "]").show();
+                }
+            })
+            $('#prevStep').click(function () {
+                if (stepNum > 1) {
+                    stepNum--;
+                    $('.modal-order__form').hide();
+                    $("[data-step=" + stepNum + "]").show();
+                }
+            })
+
+
+
+            //прелоадер
+
+            $('body').addClass('locked');
+            $('.preloader__progress > div').animate({
+                width: 100+'%'
+            }, 5000, function() {
+                $('.preloader').fadeOut(500);
+                $('body').removeClass('locked');
+            });
+
+
+            // модалки
+            $('#menuOpen').click(function () {
+                $("#menu").modal({
+                    fadeDuration: 300,
+                });
+            })
+
+            $('.order-btn').click(function () {
+                $("#order").modal({
+                    fadeDuration: 300,
+                });
+            })
+
+            $('#fitOpen').click(function () {
+                $("#fit").modal({
+                    fadeDuration: 300,
+                });
+            })
+
+            $('#open360').click(function () {
+                $("#view360").modal({
+                    fadeDuration: 300,
+                });
+            })
+
+
+            //video
+
+            $('.video-show').click(function () {
+                link = $(this).attr('href');
+                $("video").find('source').attr('src',link);
+                $("#video").modal({
+                    fadeDuration: 100
+                });
+                return false;
+            })
+
+            $('#video').on($.modal.OPEN, function() {
+                $("#video video")[0].load();
+            });
+            
+            $('#video').on($.modal.BEFORE_CLOSE, function() {
+                $("#video video")[0].pause();
+                $("video").find('source').attr('src','')
+            });
+
+            let scTop = $('#CaseSection').offset().top;
+            let body = $("html, body");
+
+            $('#Case').click(function(){
+                body.stop().animate({
+                    scrollTop: scTop - 90
+                }, 1000, 'linear');
+            })
         })
 
         
-        //шаги
         
-        var stepNum = 1;
-        $('#nextStep').click(function () {
-            if (stepNum < 4) {
-                stepNum++;
-                $('.modal-order__form').hide();
-                $("[data-step=" + stepNum + "]").show();
-            }
-        })
-        $('#prevStep').click(function () {
-            if (stepNum > 1) {
-                stepNum--;
-                $('.modal-order__form').hide();
-                $("[data-step=" + stepNum + "]").show();
-            }
-        })
+        $(window).on('load',function () {
 
+            if (window.matchMedia('(min-width: 768px)').matches) {
 
+                let imageCount = 249;
 
-        //прелоадер
-        // $('body').addClass('locked');
-        // $('.preloader__progress > div').animate({
-        //     width: 100+'%'
-        // }, 15000, function() {
-        //     $('.preloader').fadeOut(500);
-        //     $('body').removeClass('locked');
-        // });
+                for (let i = 0; i <= imageCount; i++) {
+                    $('.sequence-bg').append('<img src="/img/sequence/IN_16_' + (i).toString().padStart(5, '0') + '.png" />')
+                }
 
+                let winH = $(window).height();
+                let containerHeight = $('.sequence-scroll').height() - winH;
+                let factor = Number((containerHeight / imageCount).toFixed(0));
+                let ScTop = $(window).scrollTop();
+                let currentImage = 0;
 
-        // модалки
-        $('#menuOpen').click(function () {
-            $("#menu").modal({
-                fadeDuration: 300,
-            });
-        })
+                function Animate() {
+                    currentImage = Number((ScTop / factor).toFixed(0));
+                    if (currentImage < imageCount) {
+                        $('.sequence-bg img').hide();
+                        $('.sequence-bg img').eq(currentImage).show();
+                    } else {
+                        $('.sequence-bg img').eq(imageCount - 1).show();
+                    }
+                    console.log(currentImage, ScTop, factor);
+                }
 
-        $('.order-btn').click(function () {
-            $("#order").modal({
-                fadeDuration: 300,
-            });
-        })
+                Animate();
 
-        $('#fitOpen').click(function () {
-            $("#fit").modal({
-                fadeDuration: 300,
-            });
-        })
-
-        $('#open360').click(function () {
-            $("#view360").modal({
-                fadeDuration: 300,
-            });
-        })
-
-
-        //video
-
-        const video = document.querySelector("video");
-
-        $('.video-show').click(function () {
-            link = $(this).attr('href');
-            $("video").find('source').attr('src',link);
-            $("#video").modal({
-                fadeDuration: 100
-            });
-            return false;
-        })
-
-        $('#video').on($.modal.OPEN, function() {
-            $("#video video")[0].load();
+                $(window).bind('scroll', function () {
+                    ScTop = $(window).scrollTop();
+                    if (ScTop >= containerHeight) {
+                        $('.sequence-bg').addClass('stop')
+                    } else {
+                        $('.sequence-bg').removeClass('stop')
+                    }
+                    Animate();
+                    console.log($('body').height());
+                });
+            };
         });
-        
-        $('#video').on($.modal.BEFORE_CLOSE, function() {
-            $("#video video")[0].pause();
-            $("video").find('source').attr('src','')
-        });
-
-        let scTop = $('#CaseSection').offset().top;
-        let body = $("html, body");
-
-        $('#Case').click(function(){
-            body.stop().animate({
-                scrollTop: scTop - 90
-            }, 1000, 'linear');
-        })
-        
-        
-
 
 
     </script>

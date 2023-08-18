@@ -71,7 +71,11 @@ h2:first-child {
 }
 
 h3 {
-  font-size: 20px;
+  font-size: 30px;
+  margin: 35px 0 25px;
+}
+h3:first-child {
+  margin-top: 0px;
 }
 @media only screen and (max-width: 768px) {
   h3 {
@@ -4492,7 +4496,6 @@ input, button, textarea, select {
 }
 
 .preloader {
-  display: none;
   position: fixed;
   left: 0px;
   top: 0px;
@@ -4707,6 +4710,14 @@ input, button, textarea, select {
     gap: 45px;
   }
 }
+.modal-order h2, .modal-order h3 {
+  line-height: 60px;
+}
+@media only screen and (max-width: 768px) {
+  .modal-order h2, .modal-order h3 {
+    line-height: normal;
+  }
+}
 .modal-order__bottom {
   grid-column: 2 span;
   display: grid;
@@ -4757,7 +4768,7 @@ input, button, textarea, select {
   margin-top: -30px;
 }
 .modal-order__cart-line {
-  min-height: 66px;
+  min-height: 68px;
   display: flex;
   align-items: center;
   gap: 30px;
@@ -5135,6 +5146,9 @@ input, button, textarea, select {
   align-items: center;
   gap: 2rem;
 }
+.gphg img {
+  width: 5.667rem;
+}
 .gphg span {
   font-size: 0.8rem;
 }
@@ -5297,6 +5311,7 @@ input, button, textarea, select {
   display: block;
   border: 1px rgba(255, 255, 255, 0.3) solid;
   overflow: hidden;
+  cursor: pointer;
   transition: all 0.3s;
 }
 .preview-carusel__image img {
