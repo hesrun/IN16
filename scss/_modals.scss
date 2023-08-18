@@ -199,19 +199,28 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
     overflow: hidden;
+    &__content {
+        position: relative;
+        img {
+            vertical-align: middle;
+        }
+    }
     &__hand {
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(calc(-50% - 25px),calc(-50% + 5px));
         @include sm {
             display: none;
         }
     }
     &__watch {
         position: absolute;
-        z-index: 1
+        left: 50%;
+        top: 50%;
+        transform: translate(calc(-50% + 30px),calc(-50% - 3px));
+        z-index: 1;
+        @include sm {
+            transform: translate(-50%,-50%);
+        }
     }
     &__video {
         display: none;
@@ -223,6 +232,20 @@
         object-fit: cover;
         @include sm {
             display: block;
+        }
+    }
+    &__qr {
+        width: 100%;
+        max-width: 82.467rem;
+        padding: 0 2rem;
+        gap: 1rem;
+        display: flex;
+        align-items: flex-end;
+        span {
+            max-width: 25rem;
+        }
+        @include sm {
+            display: none;
         }
     }
     

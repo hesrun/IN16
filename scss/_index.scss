@@ -1,7 +1,7 @@
 .sequence-scroll {
     position: relative;
     overflow-x: hidden;
-    @include md {
+    @include sm {
         &:before {
             content: "dfgfg";
             display: block;
@@ -22,20 +22,28 @@
     &__container {
         min-height: 100vh;
         display: flex;
-        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        @include sm {
+            justify-content: center;
+        }
+        &:has(.sequence-section__mob-image_strap) {
+            min-height: 70vh;
+            .sequence-section__content {
+                margin-top: 10rem;
+            }
+        }
     }
     &__content {
         max-width: 33.333rem;
-        @include sm {
-            text-align: center;
-        }
+        
         &_right {
             margin-left: auto;
         }
         &_align-right {
             text-align: right;
             @include sm {
-                text-align: center;
+                text-align: left;
             }
         }
         &_full {
@@ -54,7 +62,6 @@
         gap: 1rem;
         @include sm {
             max-width: 100%;
-            grid-template-columns: 1fr;
         }
     }
     &__apps {
@@ -74,7 +81,50 @@
         }
         @include sm {
             max-width: 100%;
-            justify-content: center;
+            justify-content: flex-start;
+        }
+    }
+    &__mob-image {
+        display: none;
+        pointer-events: none;
+        @include sm {
+            display: block;
+        }
+        &_intro {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        &_case {
+            margin: 0 -1rem -4rem;
+            img {
+                width: 100%;
+            }
+        }
+        &_tech {
+            position: relative;
+            margin: 0 -1rem;
+            img {
+                right: 0;
+                top: -35rem;
+                position: absolute;
+                z-index: -1;
+            }
+        }
+        &_strap {
+            position: relative;
+            margin: 0 -1rem;
+            img {
+                right: 0;
+                top: -30rem;
+                position: absolute;
+                z-index: -1;
+            }
+        }
+        &_soft {
+            margin: 0 -1rem 3rem;
+            img {
+                width: 100%;
+            }
         }
     }
 }
@@ -133,9 +183,6 @@
     display: grid;
     grid-template-columns: 1fr;
     gap: 2rem;
-    @include sm {
-        text-align: center;
-    }
     &__title {
         font-size: .8rem;
         text-transform: uppercase;
@@ -174,9 +221,6 @@
     text-transform: uppercase;
     img {
         width: 2.333rem;
-    }
-    @include sm {
-        justify-content: center;
     }
 }
 .functions-list {

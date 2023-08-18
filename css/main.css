@@ -4842,13 +4842,14 @@ input, button, textarea, select {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   overflow: hidden;
 }
-.mobal-fit__hand {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(calc(-50% - 25px), calc(-50% + 5px));
+.mobal-fit__content {
+  position: relative;
+}
+.mobal-fit__content img {
+  vertical-align: middle;
 }
 @media only screen and (max-width: 768px) {
   .mobal-fit__hand {
@@ -4857,7 +4858,15 @@ input, button, textarea, select {
 }
 .mobal-fit__watch {
   position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(calc(-50% + 30px), calc(-50% - 3px));
   z-index: 1;
+}
+@media only screen and (max-width: 768px) {
+  .mobal-fit__watch {
+    transform: translate(-50%, -50%);
+  }
 }
 .mobal-fit__video {
   display: none;
@@ -4872,6 +4881,22 @@ input, button, textarea, select {
 @media only screen and (max-width: 768px) {
   .mobal-fit__video {
     display: block;
+  }
+}
+.mobal-fit__qr {
+  width: 100%;
+  max-width: 82.467rem;
+  padding: 0 2rem;
+  gap: 1rem;
+  display: flex;
+  align-items: flex-end;
+}
+.mobal-fit__qr span {
+  max-width: 25rem;
+}
+@media only screen and (max-width: 768px) {
+  .mobal-fit__qr {
+    display: none;
   }
 }
 
@@ -4903,7 +4928,7 @@ input, button, textarea, select {
   position: relative;
   overflow-x: hidden;
 }
-@media only screen and (max-width: 992px) {
+@media only screen and (max-width: 768px) {
   .sequence-scroll:before {
     content: "dfgfg";
     display: block;
@@ -4926,15 +4951,22 @@ input, button, textarea, select {
 .sequence-section__container {
   min-height: 100vh;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+@media only screen and (max-width: 768px) {
+  .sequence-section__container {
+    justify-content: center;
+  }
+}
+.sequence-section__container:has(.sequence-section__mob-image_strap) {
+  min-height: 70vh;
+}
+.sequence-section__container:has(.sequence-section__mob-image_strap) .sequence-section__content {
+  margin-top: 10rem;
 }
 .sequence-section__content {
   max-width: 33.333rem;
-}
-@media only screen and (max-width: 768px) {
-  .sequence-section__content {
-    text-align: center;
-  }
 }
 .sequence-section__content_right {
   margin-left: auto;
@@ -4944,7 +4976,7 @@ input, button, textarea, select {
 }
 @media only screen and (max-width: 768px) {
   .sequence-section__content_align-right {
-    text-align: center;
+    text-align: left;
   }
 }
 .sequence-section__content_full {
@@ -4963,7 +4995,6 @@ input, button, textarea, select {
 @media only screen and (max-width: 768px) {
   .sequence-section__btns {
     max-width: 100%;
-    grid-template-columns: 1fr;
   }
 }
 .sequence-section__apps {
@@ -4985,8 +5016,53 @@ input, button, textarea, select {
 @media only screen and (max-width: 768px) {
   .sequence-section__apps {
     max-width: 100%;
-    justify-content: center;
+    justify-content: flex-start;
   }
+}
+.sequence-section__mob-image {
+  display: none;
+  pointer-events: none;
+}
+@media only screen and (max-width: 768px) {
+  .sequence-section__mob-image {
+    display: block;
+  }
+}
+.sequence-section__mob-image_intro {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+.sequence-section__mob-image_case {
+  margin: 0 -1rem -4rem;
+}
+.sequence-section__mob-image_case img {
+  width: 100%;
+}
+.sequence-section__mob-image_tech {
+  position: relative;
+  margin: 0 -1rem;
+}
+.sequence-section__mob-image_tech img {
+  right: 0;
+  top: -35rem;
+  position: absolute;
+  z-index: -1;
+}
+.sequence-section__mob-image_strap {
+  position: relative;
+  margin: 0 -1rem;
+}
+.sequence-section__mob-image_strap img {
+  right: 0;
+  top: -30rem;
+  position: absolute;
+  z-index: -1;
+}
+.sequence-section__mob-image_soft {
+  margin: 0 -1rem 3rem;
+}
+.sequence-section__mob-image_soft img {
+  width: 100%;
 }
 
 .honeycomb-bg:after {
@@ -5051,11 +5127,6 @@ input, button, textarea, select {
   grid-template-columns: 1fr;
   gap: 2rem;
 }
-@media only screen and (max-width: 768px) {
-  .tech-params-list {
-    text-align: center;
-  }
-}
 .tech-params-list__title {
   font-size: 0.8rem;
   text-transform: uppercase;
@@ -5097,11 +5168,6 @@ input, button, textarea, select {
 }
 .logo-engraved img {
   width: 2.333rem;
-}
-@media only screen and (max-width: 768px) {
-  .logo-engraved {
-    justify-content: center;
-  }
 }
 
 .functions-list {
