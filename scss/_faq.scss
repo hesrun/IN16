@@ -121,18 +121,6 @@
     }
 }
 
-.video-modal {
-    padding: 0px;
-    max-width: 960px;
-    video {
-        width: 100%;
-        vertical-align: middle;
-    }
-    a.close-modal {
-        filter: invert(1);
-    }
-}
-
 @media (max-width: 1400px) {
     .get-apps {
         gap: 15px;

@@ -391,13 +391,13 @@
     <script>
 
         // прелоадер
-        $('body').addClass('locked');
-        $('.preloader__progress > div').animate({
-            width: 100+'%'
-        }, 5000, function() {
-            $('.preloader').fadeOut(500);
-            $('body').removeClass('locked');
-        });
+        // $('body').addClass('locked');
+        // $('.preloader__progress > div').animate({
+        //     width: 100+'%'
+        // }, 5000, function() {
+        //     $('.preloader').fadeOut(500);
+        //     $('body').removeClass('locked');
+        // });
 
 
         // меню
@@ -409,19 +409,9 @@
 
 
 
-        const video = document.querySelector("video");
-        $('.video-preview').click(function () {
-            link = $(this).data('link');
-            $("video").find('source').attr('src',link);
-            $("#video").modal({
-                fadeDuration: 100
-            });
-        })
-        $('#video').on($.modal.CLOSE, function() {
-            video.pause();
-            video.currentTime = 0;
-            $("video").find('source').attr('src','')
-        });
+        
+
+
         $('.faq-list__title').click(function(){
             $('.faq-list__title').removeClass('faq-list__title_active')
             $(this).addClass('faq-list__title_active')
