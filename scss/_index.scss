@@ -1,20 +1,6 @@
 .sequence-scroll {
     position: relative;
     overflow-x: hidden;
-    @include sm {
-        &:before {
-            content: "dfgfg";
-            display: block;
-            position: absolute;
-            left: 0;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(black, 0.8);
-            backdrop-filter: blur(6px);
-            z-index: 1;
-        }
-    }
 }
 .sequence-section {
     position: relative;
@@ -169,6 +155,9 @@
     width: 100%;
     height: 100vh;
     pointer-events: none;
+    @include md {
+        display: none;
+    }
     img {
         width: 100%;
         height: 100%;

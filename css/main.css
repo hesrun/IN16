@@ -4982,21 +4982,6 @@ input, button, textarea, select {
   position: relative;
   overflow-x: hidden;
 }
-@media only screen and (max-width: 768px) {
-  .sequence-scroll:before {
-    content: "dfgfg";
-    display: block;
-    position: absolute;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.8);
-    -webkit-backdrop-filter: blur(6px);
-            backdrop-filter: blur(6px);
-    z-index: 1;
-  }
-}
 
 .sequence-section {
   position: relative;
@@ -5165,6 +5150,11 @@ input, button, textarea, select {
   width: 100%;
   height: 100vh;
   pointer-events: none;
+}
+@media only screen and (max-width: 992px) {
+  .sequence-bg {
+    display: none;
+  }
 }
 .sequence-bg img {
   width: 100%;

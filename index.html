@@ -56,6 +56,7 @@
                     </div>
                 </div>
             </div>
+            <div id="triggerStart"></div>
             <div id="CaseSection" class="sequence-section">
                 <div class="container-fluid sequence-section__container">
                     <div class="sequence-section__mob-image sequence-section__mob-image_case">
@@ -129,6 +130,7 @@
                     </div>
                 </div>
             </div>
+            
             <div class="sequence-section">
                 <div class="container-fluid sequence-section__container">
                     <div class="sequence-section__content sequence-section__content_full">
@@ -173,6 +175,7 @@
                     </div>
                 </div>
             </div>
+            
             <div class="sequence-section">
                 <div class="container-fluid sequence-section__container">
                     <div class="sequence-section__mob-image sequence-section__mob-image_soft">
@@ -191,8 +194,11 @@
                     </div>
                 </div>
             </div>
+            <div id="triggerEnd"></div>
             <div class="sequence-bg">
+                <img id="scrollImg" src="img/sequence/IN_16_00000.png" alt="">
             </div>
+            
         </div>
         <div class="section-space section-space_overflow">
             <div class="container-fluid">
@@ -625,6 +631,7 @@
             </video>
         </div>
     </div>
+
     <div class="preloader">
         <div class="preloader__content">
             <img src="img/logos/logo-load-1.gif" alt="" class="preloader__logo">
@@ -697,7 +704,7 @@
                     height: {
                         min: 200,
                     },
-                    facingMode: 'environment'
+                    facingMode: 'environmWent'
                 }
             };
 
@@ -760,14 +767,14 @@
 
             let videoIn = TweenMax.staggerFrom("#videoCarusel .swiper-slide", 2,
                 {
-                    translateX: 100,
+                    translateY: 100,
                     opacity: 0,
                 }, 0.7
             );
 
             let detailIn = TweenMax.staggerFrom("#detailCarusel .swiper-slide", 2,
                 {
-                    translateX: 100,
+                    translateY: 100,
                     opacity: 0,
                 }, 0.7
             );
@@ -929,7 +936,7 @@
             $('body').addClass('locked');
             $('.preloader__progress > div').animate({
                 width: 100+'%'
-            }, 10000, function() {
+            }, 5000, function() {
                 $('.preloader').fadeOut(500);
                 $('body').removeClass('locked');
             });
@@ -981,61 +988,57 @@
                 $("video").find('source').attr('src','')
             });
 
-            let scTop = $('#CaseSection').offset().top;
+            let caseTop = $('#CaseSection').offset().top;
             let body = $("html, body");
 
             $('#Case').click(function(){
                 body.stop().animate({
-                    scrollTop: scTop - 90
+                    scrollTop: caseTop - 90
                 }, 1000, 'linear');
             })
         })
-
-        
         
         $(window).on('load',function () {
-
             if (window.matchMedia('(min-width: 768px)').matches) {
-
+                let images = [];
                 let imageCount = 249;
+                let scDuration = $('#triggerEnd').offset().top - $('#triggerStart').offset().top;
 
                 for (let i = 0; i <= imageCount; i++) {
-                    $('.sequence-bg').append('<img src="/img/sequence/IN_16_' + (i).toString().padStart(5, '0') + '.png" />')
+                    images.push('../img/sequence/IN_16_'+(i).toString().padStart(5,'0') +'.png');
                 }
 
-                let winH = $(window).height();
-                let containerHeight = $('.sequence-scroll').height() - winH;
-                let factor = Number((containerHeight / imageCount).toFixed(0));
-                let ScTop = $(window).scrollTop();
-                let currentImage = 0;
+                var obj = {curImg: 0};
 
-                function Animate() {
-                    currentImage = Number((ScTop / factor).toFixed(0));
-                    if (currentImage < imageCount) {
-                        $('.sequence-bg img').hide();
-                        $('.sequence-bg img').eq(currentImage).show();
-                    } else {
-                        $('.sequence-bg img').eq(imageCount - 1).show();
+                var tween = TweenMax.to(obj, 3,
+                    {
+                        curImg: images.length - 1,	// animate propery curImg to number of images
+                        roundProps: "curImg",				// only integers so it can be used as an array index
+                        repeat: 3,									// repeat 3 times
+                        immediateRender: true,			// load first image automatically
+                        ease: Linear.easeNone,			// show every image the same ammount of time
+                        onUpdate: function () {
+                        $("#scrollImg").attr("src", images[obj.curImg]); // set the image source
+                        }
                     }
-                    console.log(currentImage, ScTop, factor);
-                }
-
-                Animate();
-
-                $(window).bind('scroll', function () {
-                    ScTop = $(window).scrollTop();
-                    if (ScTop >= containerHeight) {
-                        $('.sequence-bg').addClass('stop')
-                    } else {
+                );
+                var sequenceController = new ScrollMagic.Controller();
+                var scene = new ScrollMagic.Scene({
+                    triggerElement: "#CaseSection",
+                    duration: scDuration,
+                    triggerHook: 1
+                })
+                    .setTween(tween)
+                    //.addIndicators() // add indicators (requires plugin)
+                    .addTo(sequenceController)
+                    .on("enter", function (e) {
                         $('.sequence-bg').removeClass('stop')
-                    }
-                    Animate();
-                    console.log($('body').height());
-                });
-            };
-        });
-
-
+                    })
+                    .on("leave", function (e) {
+                        $('.sequence-bg').addClass('stop')
+                    })
+            }
+        })
     </script>
 </body>
 
