@@ -1005,9 +1005,14 @@
 
         let images = [];
         let imageCount = 249;
+        
+        $('body').append($('<div class="imagesMass">'));
         for (let i = 0; i <= imageCount; i++) {
             images.push('img/sequence/IN_16_'+(i).toString().padStart(5,'0') +'.png');
+            $('.imagesMass').append($('<img src="'+images[i]+'">'));
         }
+
+
 
         $(window).on('load',function () {
             if (window.matchMedia('(min-width: 768px)').matches) {

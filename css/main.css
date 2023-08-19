@@ -5575,6 +5575,10 @@ input, button, textarea, select {
   }
 }
 
+.imagesMass {
+  display: none;
+}
+
 .start-links b {
   color: #FF7426;
 }
