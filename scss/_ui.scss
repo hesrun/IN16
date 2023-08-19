@@ -75,11 +75,7 @@
     &:first-child {
         margin-top: 0px;
     }
-    &:has(input[type="text"]:focus):after {
-        width: 100%;
-        opacity: 1;
-    }
-    &:not(:has(input[type="text"]:placeholder-shown)):after {
+    &:has(.c-input__field:focus):after {
         width: 100%;
         opacity: 1;
     }
@@ -92,7 +88,7 @@
         width: 0;
         height: 1px;
         background: $orange;
-        box-shadow: 0 0 4px 1px #FF7426;
+        //box-shadow: 0 0 4px 1px #FF7426;
         transition: width 0.3s ease-in-out;
         opacity: 0;
     }
@@ -106,7 +102,6 @@
         border-bottom: 1px $line solid;
         outline: none;
         @include placeholder {
-            font-size: .867rem;
             color: white;
             opacity: 1;
             text-transform: uppercase;
@@ -140,6 +135,43 @@
             box-shadow: 0 0 4px 1px #FF7426, 0 0 4px 1px #FF7426 inset;
         }
     }
+}
+
+.select2 {
+    width: 100%;
+    border-bottom: 1px $line solid;
+    &.select2-container--open {
+        border-bottom-color: $orange;
+    }
+}
+.select2-container--default .select2-selection--single {
+    border: none;
+    background: none;
+}
+.select2-container .select2-selection--single {
+    height: 35px;
+}
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    color: #fff;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 2.333rem;
+    padding-left: 0px;
+    text-transform: uppercase;
+}
+.select2-dropdown {
+    background: black;
+    border: 1px $orange solid;
+    border-radius: 0;
+}
+.select2-container--default .select2-results__option[aria-selected=true] {
+    background: rgba($orange, 1);
+}
+.select2-container--default .select2-results__option--highlighted[aria-selected] {
+    background: rgba($orange, 0.7);
+}
+.select2-container--default .select2-selection--single .select2-selection__placeholder {
+    color: #fff;
 }
 
 
@@ -243,7 +275,7 @@
 
 
 .preloader {
-    //display: none;
+    display: none;
     position: fixed;
     left: 0px;
     top: 0px;

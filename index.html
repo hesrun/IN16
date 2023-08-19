@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.2/jquery.modal.min.css">
     <link href="https://cdn.iconly.io/kits/RoNrgJhswAfF/v_9a48bc8/iconly.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css">
     <link rel="stylesheet" href="css/main.css">
 </head>
 
@@ -488,6 +489,15 @@
                         <div data-step="1" class="modal-order__form">
                             <h2>PERSONAL</h2>
                             <div class="c-input">
+                                <select class="c-select" name="" id="">
+                                    <option></option>
+                                    <option value="1">Russia</option>
+                                    <option value="2">Czech</option>
+                                    <option value="3">Ukraine</option>
+                                    <option value="4">USA</option>
+                                </select>
+                            </div>
+                            <div class="c-input">
                                 <input type="text" class="c-input__field" placeholder="FIRST & LAST Name">
                             </div>
                             <div class="c-input">
@@ -643,6 +653,7 @@
 
     <script src="js/smooth-scroll.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/10.1.0/swiper-bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.2/jquery.modal.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js"></script>
@@ -654,6 +665,13 @@
     <script>
 
         $(document).ready(function () {
+
+            $('.c-select').select2({
+                minimumResultsForSearch: -1,
+                placeholder: "Country",
+                dropdownAutoWidth: true,
+                width: 'style'
+            });
 
             Fancybox.bind()
 
@@ -937,13 +955,13 @@
 
             // //прелоадер
 
-            $('body').addClass('locked');
-            $('.preloader__progress > div').animate({
-                width: 100+'%'
-            }, 5000, function() {
-                $('.preloader').fadeOut(500);
-                $('body').removeClass('locked');
-            });
+            // $('body').addClass('locked');
+            // $('.preloader__progress > div').animate({
+            //     width: 100+'%'
+            // }, 5000, function() {
+            //     $('.preloader').fadeOut(500);
+            //     $('body').removeClass('locked');
+            // });
 
 
             // модалки
@@ -958,6 +976,9 @@
                     fadeDuration: 300,
                 });
             })
+            $("#order").modal({
+                    fadeDuration: 300,
+                });
 
             $('#fitOpen').click(function () {
                 $("#fit").modal({
