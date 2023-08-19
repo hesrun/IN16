@@ -998,16 +998,27 @@
             })
         })
         
+
+        let images = [];
+        let imageCount = 249;
+
+        for (let i = 0; i <= imageCount; i++) {
+            images.push('img/sequence/IN_16_'+(i).toString().padStart(5,'0') +'.png');
+        }
+
+        function preCacheHeros(){
+            $.each(images, function(){
+                var img = new Image();
+                img.src = this;
+            });
+        };
+
         $(window).on('load',function () {
             if (window.matchMedia('(min-width: 768px)').matches) {
-                let images = [];
-                let imageCount = 249;
+
+                preCacheHeros();
+                
                 let scDuration = $('#triggerEnd').offset().top - $('#triggerStart').offset().top;
-
-                for (let i = 0; i <= imageCount; i++) {
-                    images.push('../img/sequence/IN_16_'+(i).toString().padStart(5,'0') +'.png');
-                }
-
                 var obj = {curImg: 0};
 
                 var tween = TweenMax.to(obj, 3,
