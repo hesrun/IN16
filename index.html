@@ -1006,22 +1006,19 @@
         let images = [];
         let imageCount = 249;
         
-        $('body').append($('<div class="imagesMass">'));
-        for (let i = 0; i <= imageCount; i++) {
-            images.push('img/sequence/IN_16_'+(i).toString().padStart(5,'0') +'.png');
-            $('.imagesMass').append($('<img src="'+images[i]+'">'));
-        }
+        
 
 
 
         $(window).on('load',function () {
             if (window.matchMedia('(min-width: 768px)').matches) {
+                $('body').append($('<div class="imagesMass">'));
+                for (let i = 0; i <= imageCount; i++) {
+                    images.push('img/sequence/IN_16_'+(i).toString().padStart(5,'0') +'.png');
+                    $('.imagesMass').append($('<img src="'+images[i]+'">'));
+                }
                 let scDuration = $('#triggerEnd').offset().top - $('#triggerStart').offset().top;
-
-                
-
                 var obj = {curImg: 0};
-
                 var tween = TweenMax.to(obj, 3,
                     {
                         curImg: images.length - 1,	// animate propery curImg to number of images
