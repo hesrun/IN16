@@ -727,16 +727,20 @@
 
             var controller = new ScrollMagic.Controller();
 
-            let mobCase = new TimelineMax().from(".sequence-section__mob-image_case", 1, {
+            let mobCase = new TimelineMax().from(".sequence-section__mob-image_case img", 1, {
+                translateY: 300,
                 opacity: 0,
             })
-            let mobTech = new TimelineMax().from(".sequence-section__mob-image_tech", 1, {
+            let mobTech = new TimelineMax().from(".sequence-section__mob-image_tech img", 1, {
+                translateY: 300,
                 opacity: 0,
             })
-            let mobStrap = new TimelineMax().from(".sequence-section__mob-image_strap", 1, {
+            let mobStrap = new TimelineMax().from(".sequence-section__mob-image_strap img", 1, {
+                translateY: 300,
                 opacity: 0,
             })
-            let mobSoft = new TimelineMax().from(".sequence-section__mob-image_soft", 1, {
+            let mobSoft = new TimelineMax().from(".sequence-section__mob-image_soft img", 1, {
+                translateY: 300,
                 opacity: 0,
             })
 
@@ -1001,24 +1005,16 @@
 
         let images = [];
         let imageCount = 249;
-
         for (let i = 0; i <= imageCount; i++) {
             images.push('img/sequence/IN_16_'+(i).toString().padStart(5,'0') +'.png');
         }
 
-        function preCacheHeros(){
-            $.each(images, function(){
-                var img = new Image();
-                img.src = this;
-            });
-        };
-
         $(window).on('load',function () {
             if (window.matchMedia('(min-width: 768px)').matches) {
-
-                preCacheHeros();
-                
                 let scDuration = $('#triggerEnd').offset().top - $('#triggerStart').offset().top;
+
+                
+
                 var obj = {curImg: 0};
 
                 var tween = TweenMax.to(obj, 3,
