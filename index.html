@@ -478,9 +478,9 @@
             <div class="container-fluid">
                 <div class="modal-order">
                     <div class="modal-order__user-data">
-                        <h2>PERSONAL</h2>
                         <!-- -------------------- поля для перого шага PERSONAL -------------------- -->
                         <div data-step="1" class="modal-order__form">
+                            <h2>PERSONAL</h2>
                             <div class="c-input">
                                 <input type="text" class="c-input__field" placeholder="FIRST & LAST Name">
                             </div>
@@ -493,6 +493,7 @@
                         </div>
                         <!-- -------------------- поля для второго шага PERSONAL -------------------- -->
                         <div data-step="2" style="display: none" class="modal-order__form">
+                            <h2>DELIVERY</h2>
                             <div class="c-input">
                                 <input type="text" class="c-input__field" placeholder="COUNTRY">
                             </div>
@@ -513,6 +514,7 @@
                         </div>
                         <!-- -------------------- поля для третьего шага PAYMENT -------------------- -->
                         <div data-step="3" style="display: none" class="modal-order__form">
+                            <h2>PAYMENT</h2>
                             <div class="modal-order__payments">
                                 <a href="" class="modal-order__payments-item">
                                     <img src="img/payments/pay-cards.svg" alt="">
@@ -534,6 +536,7 @@
                         </div>
                         <!-- -------------------- поля для Последнего шага  THANK YOU-------------------- -->
                         <div data-step="4" style="display: none" class="modal-order__form">
+                            <h2>THANK YOU</h2>
                             <p>We have started preparing your order for shipment. In the near future, you will receive a
                                 letter about the delivery process. If you have any questions about the order, please
                                 contact us.</p>
@@ -750,7 +753,7 @@
 
             let functionsIn = TweenMax.staggerFrom(".functions-list__item", 2,
                 {
-                    translateX: 100,
+                    translateY: 100,
                     opacity: 0,
                 }, 0.7
             );
@@ -921,15 +924,15 @@
 
 
 
-            //прелоадер
+            // //прелоадер
 
-            $('body').addClass('locked');
-            $('.preloader__progress > div').animate({
-                width: 100+'%'
-            }, 5000, function() {
-                $('.preloader').fadeOut(500);
-                $('body').removeClass('locked');
-            });
+            // $('body').addClass('locked');
+            // $('.preloader__progress > div').animate({
+            //     width: 100+'%'
+            // }, 5000, function() {
+            //     $('.preloader').fadeOut(500);
+            //     $('body').removeClass('locked');
+            // });
 
 
             // модалки
