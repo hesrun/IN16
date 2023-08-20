@@ -73,7 +73,7 @@
     &__mob-image {
         display: none;
         pointer-events: none;
-        @include sm {
+        @include md {
             display: block;
         }
         &_intro {

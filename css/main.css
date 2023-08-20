@@ -5093,7 +5093,7 @@ input, button, textarea, select {
   display: none;
   pointer-events: none;
 }
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 992px) {
   .sequence-section__mob-image {
     display: block;
   }
