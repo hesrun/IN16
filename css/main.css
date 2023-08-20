@@ -4527,6 +4527,7 @@ input, button, textarea, select {
 }
 
 .preloader {
+  display: none;
   position: fixed;
   left: 0px;
   top: 0px;
@@ -5027,13 +5028,9 @@ input, button, textarea, select {
 @media only screen and (max-width: 768px) {
   .sequence-section__container {
     justify-content: center;
+    min-height: auto;
+    padding-top: 6rem;
   }
-}
-.sequence-section__container:has(.sequence-section__mob-image_strap) {
-  min-height: 70vh;
-}
-.sequence-section__container:has(.sequence-section__mob-image_strap) .sequence-section__content {
-  margin-top: 10rem;
 }
 .sequence-section__content {
   max-width: 33.333rem;
@@ -5103,14 +5100,14 @@ input, button, textarea, select {
   margin-bottom: 4rem;
 }
 .sequence-section__mob-image_case {
-  margin: 0 -1rem -4rem;
+  margin: 0 -1rem -2rem;
 }
 .sequence-section__mob-image_case img {
   width: 100%;
 }
 .sequence-section__mob-image_tech {
   position: relative;
-  margin: 0 -1rem;
+  margin: 8rem -1rem 0;
 }
 .sequence-section__mob-image_tech img {
   right: 0;
@@ -5120,7 +5117,7 @@ input, button, textarea, select {
 }
 .sequence-section__mob-image_strap {
   position: relative;
-  margin: 0 -1rem;
+  margin: 8rem -1rem 10rem;
 }
 .sequence-section__mob-image_strap img {
   right: 0;
@@ -5170,7 +5167,7 @@ input, button, textarea, select {
 }
 @media only screen and (max-width: 768px) {
   .gphg {
-    margin: 2rem 0 -2rem;
+    margin: 2rem 0 2rem;
   }
 }
 

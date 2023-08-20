@@ -12,12 +12,8 @@
         justify-content: center;
         @include sm {
             justify-content: center;
-        }
-        &:has(.sequence-section__mob-image_strap) {
-            min-height: 70vh;
-            .sequence-section__content {
-                margin-top: 10rem;
-            }
+            min-height: auto;
+            padding-top: 6rem;
         }
     }
     &__content {
@@ -81,14 +77,14 @@
             margin-bottom: 4rem;
         }
         &_case {
-            margin: 0 -1rem -4rem;
+            margin: 0 -1rem -2rem;
             img {
                 width: 100%;
             }
         }
         &_tech {
             position: relative;
-            margin: 0 -1rem;
+            margin: 8rem -1rem 0;
             img {
                 right: 0;
                 top: -35rem;
@@ -98,7 +94,7 @@
         }
         &_strap {
             position: relative;
-            margin: 0 -1rem;
+            margin: 8rem -1rem 10rem;
             img {
                 right: 0;
                 top: -30rem;
@@ -144,7 +140,7 @@
         font-size: .8rem;
     }
     @include sm {
-        margin: 2rem 0 -2rem;
+        margin: 2rem 0 2rem;
     }
 }
 
