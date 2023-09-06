@@ -220,13 +220,16 @@
         display: grid;
         grid-template-columns: 1fr 1fr;
     }
+    &__item:last-child {
+        display: none;
+        @include sm {
+            display: block;
+        }
+    }
     &__image {
         height: 7.667rem;
         display: flex;
         align-items: center;
-        @include md {
-            justify-content: center;
-        }
     }
     &__title {
         margin-top: .667rem;

@@ -5256,15 +5256,18 @@ input, button, textarea, select {
     grid-template-columns: 1fr 1fr;
   }
 }
+.functions-list__item:last-child {
+  display: none;
+}
+@media only screen and (max-width: 768px) {
+  .functions-list__item:last-child {
+    display: block;
+  }
+}
 .functions-list__image {
   height: 7.667rem;
   display: flex;
   align-items: center;
-}
-@media only screen and (max-width: 992px) {
-  .functions-list__image {
-    justify-content: center;
-  }
 }
 .functions-list__title {
   margin-top: 0.667rem;
