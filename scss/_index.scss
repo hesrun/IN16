@@ -62,6 +62,7 @@
             font-size: 1.6rem;
         }
         @include sm {
+            display: none;
             max-width: 100%;
             justify-content: flex-start;
         }
@@ -75,6 +76,10 @@
         &_intro {
             text-align: center;
             margin-bottom: 4rem;
+            img {
+                width: 60%;
+                max-width: 20rem;
+            }
         }
         &_case {
             margin: 0 -1rem -2rem;
@@ -143,7 +148,6 @@
         margin: 2rem 0 2rem;
     }
 }
-
 .sequence-bg {
     overflow: hidden;
     top: 0;
@@ -165,7 +169,6 @@
         top: auto;
     }
 }
-
 .tech-params-list {
     margin-top: 2rem;
     display: grid;
@@ -183,7 +186,6 @@
         font-size: 50%;
     }
 }
-
 .lamps-info {
     margin-top: 2rem;
     max-width: 12.667rem;
@@ -477,11 +479,13 @@
     }
     &__fit {
         margin-top: 8rem;
+        display: none;
         .icon {
             font-size: 3rem;
         }
         @include sm {
             margin: 2rem 0;
+            display: inline-flex;
         }
     }
     &__video {
@@ -500,26 +504,6 @@
         }
     }
 }
-.fit-btn {
-    border: none;
-    background: none;
-    font-size: .8rem;
-    cursor: pointer;
-    display: inline-flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
-    color: white;
-    appearance: none;
-    transition: all 0.3s;
-    &:hover {
-        color: $orange;
-    }
-    @include sm {
-        align-items: center;
-    }
-}
-
 .imagesMass {
     display: none;
 }
