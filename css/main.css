@@ -4527,6 +4527,7 @@ input, button, textarea, select {
 }
 
 .preloader {
+  display: none;
   position: fixed;
   left: 0px;
   top: 0px;
@@ -4872,6 +4873,19 @@ input, button, textarea, select {
     text-align: center;
     display: block;
     padding: 0.333rem 15px;
+  }
+}
+.modal-order__show-order {
+  display: none;
+}
+@media only screen and (max-width: 992px) {
+  .modal-order__show-order {
+    display: block;
+  }
+}
+@media only screen and (max-width: 992px) {
+  .modal-order__order-data {
+    display: none;
   }
 }
 

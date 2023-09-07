@@ -193,6 +193,17 @@
             padding: .333rem 15px;
         }
     }
+    &__show-order {
+        display: none;
+        @include md {
+            display: block;
+        }
+    }
+    &__order-data {
+        @include md {
+            display: none;
+        }
+    }
 }
 
 /* -------------------------------- mobal-fit ------------------------------- */

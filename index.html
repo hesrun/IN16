@@ -216,6 +216,16 @@
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
                             <div class="preview-carusel__thumb">
+                                <a href="https://gelfman.ch/ext/unpack.mp4" class="preview-carusel__image video-show">
+                                    <img src="img/index/video/image 30.png" alt="">
+                                </a>
+                            </div>
+                            <div class="preview-carusel__name">
+                                UNPACKING<span class="preview-carusel__time">2 min 24 sec</span>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="preview-carusel__thumb">
                                 <a href="https://gelfman.ch/ext/v2.mp4" class="preview-carusel__image video-show">
                                     <img src="img/index/video/image 26.png" alt="">
                                 </a>
@@ -232,16 +242,6 @@
                             </div>
                             <div class="preview-carusel__name">
                                 TECH <span class="preview-carusel__time">24 sec</span>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="preview-carusel__thumb">
-                                <a href="https://gelfman.ch/ext/unpack.mp4" class="preview-carusel__image video-show">
-                                    <img src="img/index/video/image 30.png" alt="">
-                                </a>
-                            </div>
-                            <div class="preview-carusel__name">
-                                UNPACKING <span class="preview-carusel__time">2 min 24 sec</span>
                             </div>
                         </div>
                     </div>
@@ -569,6 +569,9 @@
                             </div>
                         </div>
                     </div>
+                    <button id="viewOrder" class="modal-order__show-order c-button c-button_orange c-button_filled">
+                        view my order
+                    </button>
                     <div class="modal-order__order-data">
                         <h3>ORDER</h3>
                         <div class="modal-order__cart">
@@ -700,6 +703,13 @@
                 },
             });
 
+            //показать скрыть заказ
+            let visibleOrder = false;
+            $('#viewOrder').click(function(){
+                $('.modal-order__order-data').is(":visible") ? $(this).text('view my order') : $(this).text('hide my order');
+                $('.modal-order__order-data').slideToggle(300);
+            })
+
             //масштаб часов примерка
 
             let scale = 1;
@@ -773,8 +783,8 @@
 
             // //прелоадер
 
-            $('body').addClass('locked');
-            $('.preloader__progress > div').animate({
+            //$('body').addClass('locked');
+            $('.preloader__progresss > div').animate({
                 width: 100+'%'
             }, 5000, function() {
                 $('.preloader').fadeOut(500);
