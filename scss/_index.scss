@@ -467,7 +467,7 @@
         }
     }
     &__right {
-        align-self: self-end;
+        align-self: center;
         padding-bottom: 5rem;
         @include sm {
             text-align: center;
@@ -486,21 +486,6 @@
         @include sm {
             margin: 2rem 0;
             display: inline-flex;
-        }
-    }
-    &__video {
-        font-size: .8rem;
-        display: inline-flex;
-        align-items: center;
-        text-decoration: none;
-        gap: .5rem;
-        color: white;
-        transition: all 0.3s;
-        span {
-            font-size: 1rem;
-        }
-        &:hover {
-            color: $orange;
         }
     }
 }

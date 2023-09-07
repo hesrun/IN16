@@ -5599,7 +5599,7 @@ input, button, textarea, select {
   }
 }
 .order-section__right {
-  align-self: self-end;
+  align-self: center;
   padding-bottom: 5rem;
 }
 @media only screen and (max-width: 768px) {
@@ -5623,21 +5623,6 @@ input, button, textarea, select {
     margin: 2rem 0;
     display: inline-flex;
   }
-}
-.order-section__video {
-  font-size: 0.8rem;
-  display: inline-flex;
-  align-items: center;
-  text-decoration: none;
-  gap: 0.5rem;
-  color: white;
-  transition: all 0.3s;
-}
-.order-section__video span {
-  font-size: 1rem;
-}
-.order-section__video:hover {
-  color: #FF7426;
 }
 
 .imagesMass {
