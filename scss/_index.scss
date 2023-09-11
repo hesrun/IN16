@@ -352,7 +352,7 @@
         }
         @include sm {
             flex-direction: column;
-            margin-bottom: 2rem;
+            margin-bottom: 3rem;
         }
     }
     &__quote {
@@ -387,7 +387,8 @@
             right: 0;
             left: 0;
             top: auto;
-            bottom: -1rem;
+            bottom: 1rem;
+            margin: 0;
         }
     }
     .swiper-pagination-bullet {

@@ -5467,7 +5467,7 @@ input, button, textarea, select {
 @media only screen and (max-width: 768px) {
   .recenze-carusel__item {
     flex-direction: column;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
   }
 }
 .recenze-carusel__quote {
@@ -5506,7 +5506,8 @@ input, button, textarea, select {
     right: 0;
     left: 0;
     top: auto;
-    bottom: -1rem;
+    bottom: 1rem;
+    margin: 0;
   }
 }
 .recenze-carusel .swiper-pagination-bullet {
