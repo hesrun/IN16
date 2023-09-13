@@ -4543,7 +4543,6 @@ input, button, textarea, select {
 }
 
 .preloader {
-  display: none;
   position: fixed;
   left: 0px;
   top: 0px;
@@ -4570,9 +4569,9 @@ input, button, textarea, select {
   border: 1px solid white;
 }
 .preloader__progress div {
-  width: 0;
   height: 3px;
   background: #fff;
+  animation: 3s progress infinite linear;
 }
 
 .fit-btn {
@@ -4599,6 +4598,14 @@ input, button, textarea, select {
   }
 }
 
+@keyframes progress {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
 .header {
   position: relative;
   position: fixed;

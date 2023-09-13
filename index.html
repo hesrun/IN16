@@ -782,14 +782,11 @@
 
             // //прелоадер
 
-            //$('body').addClass('locked');
-            $('.preloader__progresss > div').animate({
-                width: 100+'%'
-            }, 5000, function() {
+            $('body').addClass('locked');
+            $(window).on('load',function () {
                 $('.preloader').fadeOut(500);
                 $('body').removeClass('locked');
-            });
-
+            })
 
             // модалки
             $('#menuOpen').click(function () {

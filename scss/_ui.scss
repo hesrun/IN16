@@ -280,7 +280,7 @@
 
 
 .preloader {
-    display: none;
+    //display: none;
     position: fixed;
     left: 0px;
     top: 0px;
@@ -305,9 +305,9 @@
         width: 250px;
         border: 1px solid white;
         div {
-            width: 0;
             height: 3px;
             background: #fff;
+            animation: 3s progress infinite linear;
         }
     }
 }
@@ -329,5 +329,14 @@
     }
     @include sm {
         align-items: center;
+    }
+}
+
+@keyframes progress {
+    from {
+        width: 0
+    }
+    to {
+        width: 100%
     }
 }
