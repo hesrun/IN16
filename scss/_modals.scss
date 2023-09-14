@@ -159,7 +159,15 @@
     &__final-quant {
         margin-right: 30px;
     }
+    &__payment-radio {
+        display: none;
+        &:checked + label {
+            border-color: $orange;
+            background: rgba($orange,0.2);
+        }
+    }
     &__payments-item {
+        cursor: pointer;
         color: white;
         font-weight: 500;
         text-transform: uppercase;

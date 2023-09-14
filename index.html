@@ -505,12 +505,16 @@
                             </div>
                             <div class="c-input">
                                 <input type="text" class="c-input__field" placeholder="FIRST & LAST Name">
+                                <label class="c-input__label" for="">FIRST & LAST Name</label>
+                                <div class="c-input__error">Error text</div>
                             </div>
                             <div class="c-input">
-                                <input type="text" class="c-input__field" placeholder="E-mAIL">
+                                <input type="text" class="c-input__field" placeholder="E-MAIL">
+                                <label class="c-input__label" for="">E-MAIL</label>
                             </div>
                             <div class="c-input">
                                 <input type="text" class="c-input__field" placeholder="PHONE">
+                                <label class="c-input__label" for="">PHONE</label>
                             </div>
                         </div>
                         <!-- -------------------- поля для второго шага PERSONAL -------------------- -->
@@ -538,22 +542,26 @@
                         <div data-step="3" style="display: none" class="modal-order__form">
                             <h2>PAYMENT</h2>
                             <div class="modal-order__payments">
-                                <a href="" class="modal-order__payments-item">
+                                <input class="modal-order__payment-radio" type="radio" name="payment" id="card">
+                                <label for="card" class="modal-order__payments-item">
                                     <img src="img/payments/pay-cards.svg" alt="">
                                     CREDIT CARD
-                                </a>
-                                <a href="" class="modal-order__payments-item">
+                                </label>
+                                <input class="modal-order__payment-radio" type="radio" name="payment" id="invoice">
+                                <label for="invoice" class="modal-order__payments-item">
                                     <img src="img/payments/pay-transfer.svg" alt="">
                                     INVOICE
-                                </a>
-                                <a href="" class="modal-order__payments-item">
+                                </label>
+                                <input class="modal-order__payment-radio" type="radio" name="payment" id="crypto">
+                                <label for="crypto" class="modal-order__payments-item">
                                     <img src="img/payments/pay-cripto.svg" alt="">
                                     CRYPTOCYRRENCY
-                                </a>
-                                <a href="" class="modal-order__payments-item">
+                                </label>
+                                <input class="modal-order__payment-radio" type="radio" name="payment" id="paypal">
+                                <label for="paypal" class="modal-order__payments-item">
                                     <img src="img/payments/pay-paypal.svg" alt="">
                                     PAYPAL
-                                </a>
+                                </label>
                             </div>
                         </div>
                         <!-- -------------------- поля для Последнего шага  THANK YOU-------------------- -->
