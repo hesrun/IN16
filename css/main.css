@@ -4290,6 +4290,25 @@ input, button, textarea, select {
 .c-button_icon {
   gap: 8px;
 }
+.c-button_load {
+  position: relative;
+  color: transparent !important;
+  pointer-events: none;
+}
+.c-button_load:after {
+  content: "";
+  left: 50%;
+  top: 50%;
+  display: block;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  border: 2px white solid;
+  border-right: 2px transparent solid;
+  animation: 0.5s spin infinite linear;
+  position: absolute;
+  margin: -0.6rem 0 0 -0.5rem;
+}
 
 .c-input {
   position: relative;
@@ -4648,6 +4667,11 @@ input, button, textarea, select {
   }
   to {
     width: 100%;
+  }
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
   }
 }
 .header {
