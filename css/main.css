@@ -4556,6 +4556,7 @@ input, button, textarea, select {
 }
 
 .preloader {
+  display: none;
   position: fixed;
   left: 0px;
   top: 0px;
@@ -4609,6 +4610,36 @@ input, button, textarea, select {
   .fit-btn {
     align-items: center;
   }
+}
+
+.iti {
+  width: 100%;
+}
+.iti__country-list {
+  background: black;
+  border-color: #FF7426;
+}
+.iti__country-list::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+.iti__country-list::-webkit-scrollbar-thumb {
+  background: #FF7426;
+}
+.iti__country-list::-webkit-scrollbar-track {
+  background: black;
+}
+.iti__country-list {
+  scrollbar-face-color: #FF7426;
+  scrollbar-track-color: black;
+}
+.iti + label {
+  transform: translateY(-1.667rem);
+  font-size: 10px;
+  color: #FF7426;
+}
+.iti__highlight {
+  background: rgba(255, 116, 38, 0.2) !important;
 }
 
 @keyframes progress {
