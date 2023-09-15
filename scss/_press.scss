@@ -1,0 +1,67 @@
+.press-page {
+    display: grid;
+    grid-template-columns: 1fr 20rem;
+    gap: 0 6rem;
+    @include md {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+}
+
+.press-item {
+    display: grid;
+    grid-template-columns: 1fr 8rem;
+    gap: 0 8rem;
+    padding: 3rem 0;
+    color: white;
+    border-bottom: 1px $line solid;
+    align-items: center;
+    &:hover {
+        color: $orange;
+    }
+    &__text {
+        font-size: 2.333rem;
+        font-weight: 100;
+        @include sm {
+            font-size: 1.6rem;
+        }
+    }
+    &__author {
+        font-size: .8rem;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        img {
+            @include sm {
+                margin-left: auto;
+            }
+        }
+    }
+    &:last-child {
+        padding-bottom: 0;
+        border: none;
+    }
+    &:first-child {
+        padding-top: 0;
+    }
+    @include md {
+        gap: 0 3rem;
+    }
+    @include sm {
+        padding: 2rem 0;
+        gap: 2rem;
+        grid-template-columns: 1fr;
+        justify-items: end;
+    }
+}
+
+.press-kit {
+    border: 1px white solid;
+    padding: 2rem;
+    align-self: start;
+    &__size {
+        display: block;
+        margin: .333rem 0 1rem;
+        font-size: .8rem;
+    }
+}

@@ -1,0 +1,45 @@
+.contact-page {
+    display: grid;
+    grid-template-columns: 3fr 3fr;
+    gap: 0 20%;
+    @include lg {
+        gap: 0 10%;
+    }
+    @include md {
+        grid-template-columns: 1fr;
+        gap: 5rem;
+    }
+}
+
+.contact-info {
+    &__link {
+        display: flex;
+        align-items: center;
+        color: white;
+        font-weight: 500;
+        gap: 1rem;
+        margin-top: 1rem;
+        &:first-child {
+            margin-top: 0;
+        }
+        .icon {
+            font-size: 1.6rem;
+        }
+        &:hover {
+            color: $orange;
+        }
+    }
+    &__social {
+        margin-top: 2rem;
+        max-width: 1.667rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+    &__follow {
+        margin-top: 15rem;
+        @include md {
+            margin-top: 3rem;
+        }
+    }
+}

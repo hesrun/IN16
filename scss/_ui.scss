@@ -66,6 +66,12 @@
     &_icon {
         gap: 8px;
     }
+    &_disabled,
+    &:disabled {
+        pointer-events: none;
+        background: #ccc;
+        border-color: #ccc;
+    }
     &_load {
         position: relative;
         color: transparent !important;
@@ -90,10 +96,7 @@
 .c-input {
     position: relative;
     width: 100%;
-    margin-top: 2rem;
-    &:first-child {
-        margin-top: 0px;
-    }
+    margin-bottom: 2rem;
     &:has(.c-input__field:focus):after {
         width: 100%;
         opacity: 1;
@@ -130,6 +133,19 @@
             opacity: 0;
         }
     }
+    &__textarea {
+        color: #fff;
+        border: 1px white solid;
+        padding: 1rem;
+        background: none;
+        width: 100%;
+        resize: vertical;
+        height: 16.667rem;
+        outline: none;
+        &:focus {
+            border-color: $orange;
+        }
+    }
     &__label {
         text-transform: uppercase;
         font-size: .933rem;
@@ -141,6 +157,14 @@
         width: 100%;
         pointer-events: none;
         transition: all 0.3s cubic-bezier(.47,1.64,.41,.8);
+        &_static {
+            position: static;
+            display: block;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            font-weight: 500;
+            font-size: .933rem;
+        }
     }
     &__error {
         pointer-events: none;
