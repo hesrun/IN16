@@ -344,7 +344,7 @@
 
 
 .preloader {
-    display: none;
+    //display: none;
     position: fixed;
     left: 0px;
     top: 0px;
@@ -371,7 +371,7 @@
         div {
             height: 3px;
             background: #fff;
-            animation: 3s progress infinite linear;
+            width: 50%;
         }
     }
 }
@@ -410,15 +410,6 @@
     }
     &__highlight {
         background: rgba($orange,0.2) !important;
-    }
-}
-
-@keyframes progress {
-    from {
-        width: 0
-    }
-    to {
-        width: 100%
     }
 }
 @keyframes spin {

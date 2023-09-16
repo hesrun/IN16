@@ -4621,7 +4621,6 @@ input, button, textarea, select {
 }
 
 .preloader {
-  display: none;
   position: fixed;
   left: 0px;
   top: 0px;
@@ -4650,7 +4649,7 @@ input, button, textarea, select {
 .preloader__progress div {
   height: 3px;
   background: #fff;
-  animation: 3s progress infinite linear;
+  width: 50%;
 }
 
 .fit-btn {
@@ -4707,14 +4706,6 @@ input, button, textarea, select {
   background: rgba(255, 116, 38, 0.2) !important;
 }
 
-@keyframes progress {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
-}
 @keyframes spin {
   to {
     transform: rotate(360deg);
