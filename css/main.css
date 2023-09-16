@@ -4566,8 +4566,7 @@ input, button, textarea, select {
 }
 @media only screen and (max-width: 992px) {
   .modal-fs a.close-modal {
-    right: 1rem;
-    left: auto;
+    left: 1rem;
   }
 }
 @media only screen and (max-width: 768px) {
@@ -5146,6 +5145,21 @@ input, button, textarea, select {
   background: #FF7426;
   font-size: 2.5rem;
   cursor: pointer;
+  position: relative;
+}
+.mobal-fit__scale-btn:after, .mobal-fit__scale-btn:before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 1.4rem;
+  height: 1px;
+  background: black;
+  left: 50%;
+  top: 50%;
+  margin-left: -0.7rem;
+}
+.mobal-fit__scale-btn_plus:after {
+  transform: rotate(90deg);
 }
 
 /* ------------------------------ modal-view360 ----------------------------- */

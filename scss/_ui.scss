@@ -291,8 +291,7 @@
             transform: rotate(-45deg);
         }
         @include md {
-            right: 1rem;
-            left: auto;
+            left: 1rem;
         }
         @include sm {
             width: 2rem;
