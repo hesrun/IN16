@@ -65,6 +65,9 @@
     }
     &_icon {
         gap: 8px;
+        .icon {
+            font-size: 18px;
+        }
     }
     &_disabled,
     &:disabled {

@@ -20,18 +20,18 @@
                 <img src="img/logos/logo-engraved.gif" alt="">
             </a>
             <div class="header__socials">
-                <a href="" class="header__social-link">
-                    <img src="img/icons/ico-whatsapp.svg" alt="">
+                <a href="" class="header__social-link icon-ico-instagram">
                 </a>
-                <a href="" class="header__social-link">
-                    <img src="img/icons/ico-telegram.svg" alt="">
+                <a href="" class="header__social-link icon-ico-whatsapp">
+                </a>
+                <a href="" class="header__social-link icon-ico-telegram">
                 </a>
             </div>
         </div>
     </div>
     <div class="main-content">
         <section class="section-space">
-            <div class="container">
+            <div class="container-fluid">
                 <h2 class="mb-5">Welcome to <span class="yellow-text">IN-16</span></h2>
                 <div class="row g-2 g-md-5 mb-5">
                     <p class="col-12 col-md-6">Welcome to the nexia world with the amazing Gelfman IN-16 watch. Here you will find instructions for setting up and operating the watch in a convenient video format. </p>
@@ -84,7 +84,7 @@
                         </li>
                     </ul>                                                  
                 </div>
-                <div class="steps-grid mb-5">
+                <div class="steps-grid mb-4 mb-lg-6">
                     <div class="step-name">
                         <div class="step-name__count">1</div>
                         <h3 class="step-name__title">
@@ -95,7 +95,7 @@
                         <div class="get-apps">
                             <div>
                                 <a href="" class="c-button c-button_full c-button_white c-button_outline c-button_icon">
-                                    <img src="img/index/win-icon.svg" alt="">
+                                    <i class="icon icon-ico-win"></i>
                                     Windows
                                 </a>
                                 <div class="app-info">
@@ -105,7 +105,7 @@
                             </div>
                             <div>
                                 <a href="" class="c-button c-button_full c-button_white c-button_outline c-button_icon">
-                                    <img src="img/index/mac-icon.svg" alt="">
+                                    <i class="icon icon-ico-apple"></i>
                                     Mac OS NOW
                                 </a>
                                 <div class="app-info">
@@ -149,7 +149,7 @@
             </div>
         </section>
         <section class="section-space">
-            <div class="container">
+            <div class="container-fluid">
                 <h2 class="mb-5">SETUP <span class="yellow-text">IN-16</span> USING APP</h2>
                 <div class="steps-grid">
                     <div>
@@ -212,7 +212,7 @@
             </div>
         </section>
         <section class="section-space">
-            <div class="container">
+            <div class="container-fluid">
                 <h2 class="mb-5">HOW TO USE <span class="yellow-text">IN-16</span></h2>
                 <div class="steps-grid">
                     <div>
@@ -275,7 +275,7 @@
             </div>
         </section>
         <section class="section-space">
-            <div class="container">
+            <div class="container-fluid">
                 <h2 class="mb-5">FAQS</h2>
                 <div class="faq-btns mb-5">
                     <a href="" class="button">
@@ -322,7 +322,7 @@
         </section>
     </div>
     <div class="footer">
-        <div class="container-fluid d-flex justify-content-between align-items-center">
+        <div class="container-fluid d-flex flex-column flex-md-row justify-content-between align-items-center">
             <div class="footer__logo">
                 <a href="">
                     <img src="img/logos/logo-footer.svg" alt="">
@@ -334,7 +334,7 @@
                 <a href="" class="footer__link">Cookie Policy</a>
             </div>
             <div class="footer__copy">
-                © 2023 GELFMAN S.A.
+                © 2023 GELFMAN AG
             </div>
         </div>
     </div>
@@ -377,27 +377,10 @@
             <source src="" type="video/mp4">
         </video>
     </div>
-    <div class="preloader">
-        <div class="preloader__content">
-            <img src="img/logos/logo-load-1.gif" alt="" class="preloader__logo">
-            <div class="preloader__progress">
-                <div></div>
-            </div>
-        </div>
-    </div>
     <script src="js/smooth-scroll.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.2/jquery.modal.min.js"></script>
     <script>
-
-        // прелоадер
-        // $('body').addClass('locked');
-        // $('.preloader__progress > div').animate({
-        //     width: 100+'%'
-        // }, 5000, function() {
-        //     $('.preloader').fadeOut(500);
-        //     $('body').removeClass('locked');
-        // });
 
 
         // меню
@@ -406,10 +389,6 @@
                 fadeDuration: 300,
             });
         })
-
-
-
-        
 
 
         $('.faq-list__title').click(function(){
