@@ -72,8 +72,8 @@
     &_disabled,
     &:disabled {
         pointer-events: none;
-        background: #ccc;
-        border-color: #ccc;
+        background: #ccc !important;
+        border-color: #ccc !important;
     }
     &_load {
         position: relative;
@@ -346,7 +346,7 @@
 
 
 .preloader {
-    //display: none;
+    display: none;
     position: fixed;
     left: 0px;
     top: 0px;

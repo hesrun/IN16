@@ -4318,8 +4318,8 @@ input, button, textarea, select {
 }
 .c-button_disabled, .c-button:disabled {
   pointer-events: none;
-  background: #ccc;
-  border-color: #ccc;
+  background: #ccc !important;
+  border-color: #ccc !important;
 }
 .c-button_load {
   position: relative;
@@ -4623,6 +4623,7 @@ input, button, textarea, select {
 }
 
 .preloader {
+  display: none;
   position: fixed;
   left: 0px;
   top: 0px;
@@ -4933,11 +4934,16 @@ input, button, textarea, select {
 .modal-order__actions {
   display: flex;
   align-items: center;
+  gap: 1rem;
 }
 @media only screen and (max-width: 768px) {
   .modal-order__actions {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
+    justify-items: start;
+  }
+  .modal-order__actions .c-button_clear {
+    padding: 0;
   }
 }
 .modal-order__step {
@@ -4976,6 +4982,11 @@ input, button, textarea, select {
 }
 .modal-order__next-step {
   width: 225px;
+}
+@media only screen and (max-width: 768px) {
+  .modal-order__next-step {
+    width: 100%;
+  }
 }
 .modal-order__2cols {
   display: grid;
@@ -5241,6 +5252,11 @@ input, button, textarea, select {
 .sequence-section__content_top {
   margin-bottom: 15%;
 }
+@media only screen and (max-width: 768px) {
+  .sequence-section__content {
+    max-width: 100%;
+  }
+}
 .sequence-section__btns {
   max-width: 23.333rem;
   display: grid;
@@ -5250,6 +5266,10 @@ input, button, textarea, select {
 @media only screen and (max-width: 768px) {
   .sequence-section__btns {
     max-width: 100%;
+    grid-template-columns: 1fr;
+  }
+  .sequence-section__btns #Case {
+    display: none;
   }
 }
 .sequence-section__apps {
