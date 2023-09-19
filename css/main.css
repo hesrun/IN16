@@ -114,6 +114,13 @@ input, button, textarea, select {
   line-height: 1.3;
 }
 
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-text-fill-color: white;
+  -webkit-box-shadow: 0 0 0px 40rem #000 inset;
+}
+
 .section-space {
   padding-top: 8rem;
 }
@@ -128,7 +135,7 @@ input, button, textarea, select {
 }
 @media only screen and (max-width: 768px) {
   .section-space {
-    padding-top: 4rem;
+    padding-top: 6rem;
   }
   .section-space:last-child {
     padding-bottom: 4rem;
@@ -4318,8 +4325,7 @@ input, button, textarea, select {
 }
 .c-button_disabled, .c-button:disabled {
   pointer-events: none;
-  background: #ccc !important;
-  border-color: #ccc !important;
+  opacity: 0.2;
 }
 .c-button_load {
   position: relative;
@@ -4858,6 +4864,9 @@ input, button, textarea, select {
   display: flex;
   gap: 30px;
 }
+.modal-nav__socials + .modal-nav__logo {
+  margin-top: 60px;
+}
 .modal-nav__social-link {
   font-size: 19.995px;
   color: white;
@@ -5251,6 +5260,11 @@ input, button, textarea, select {
 }
 .sequence-section__content_top {
   margin-bottom: 15%;
+}
+@media only screen and (max-width: 768px) {
+  .sequence-section__content_top {
+    margin-bottom: 0;
+  }
 }
 @media only screen and (max-width: 768px) {
   .sequence-section__content {
@@ -5727,6 +5741,9 @@ input, button, textarea, select {
 @media only screen and (max-width: 768px) {
   .order-section__buy h2 br {
     display: none;
+  }
+  .order-section__buy .order-btn {
+    width: 100%;
   }
 }
 .order-section__price {

@@ -40,6 +40,9 @@
     &__socials {
         display: flex;
         gap: 30px;
+        & + .modal-nav__logo {
+            margin-top: 60px;
+        }
     }
     &__social-link {
         font-size: 19.995px;

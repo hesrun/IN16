@@ -72,8 +72,7 @@
     &_disabled,
     &:disabled {
         pointer-events: none;
-        background: #ccc !important;
-        border-color: #ccc !important;
+        opacity: 0.2;
     }
     &_load {
         position: relative;
