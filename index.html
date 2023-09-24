@@ -702,6 +702,20 @@
         </div>
     </div>
 
+    <div class="fab">
+        <div class="fab__toggle">
+            <i class="icon icon-write-light"></i>
+        </div>
+        <div class="fab__btns">
+            <a href="" class="fab__btn fab__btn_whatsapp">
+                <i class="icon icon-ico-whatsapp"></i>
+            </a>
+            <a href="" class="fab__btn fab__btn_telegram">
+                <i class="icon icon-ico-telegram"></i>
+            </a>
+        </div>
+    </div>
+
     <div class="preloader">
         <div class="preloader__content">
             <img src="img/logos/logo-load-1.gif" alt="" class="preloader__logo">
@@ -742,14 +756,10 @@
 
         $(document).ready(function () {
 
-            let preloadTexts = $('.preloader__text .preloader__text-item').length;
-            
-            for (let i = 0; i <= preloadTexts; ++i) {
-                setTimeout(function(){
-                    $('.preloader__text-item').fadeOut(100);
-                    $('.preloader__text-item:nth-child('+i+')').fadeIn(400);
-                }, 1500*i)
-            }
+            $('.fab').click(function(){
+                $(this).toggleClass('fab_active');
+                $('.fab__toggle').find('.icon').toggleClass('icon-write-light icon-close-light')
+            })
 
             $('.c-select').select2({
                 minimumResultsForSearch: -1,
@@ -868,6 +878,14 @@
 
 
             // //прелоадер
+
+            let preloadTexts = $('.preloader__text .preloader__text-item').length;
+            for (let i = 0; i <= preloadTexts; ++i) {
+                setTimeout(function(){
+                    $('.preloader__text-item').fadeOut(100);
+                    $('.preloader__text-item:nth-child('+i+')').fadeIn(400);
+                }, 1500*i)
+            }
 
             //$('body').addClass('locked');
             $(window).on('load',function () {
