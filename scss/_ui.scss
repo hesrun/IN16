@@ -244,14 +244,10 @@
 .select2-container--default .select2-selection--single .select2-selection__placeholder {
     color: #fff;
 }
-
-
-
 .blocker {
     padding: 0px;
     z-index: 11;
 }
-
 .modal-fs {
     position: fixed;
     left: 0px;
@@ -307,9 +303,6 @@
         align-items: center;
     }
 }
-
-
-
 .product-counter {
     display: flex;
     align-items: center;
@@ -342,8 +335,6 @@
         }
     }
 }
-
-
 .preloader {
     display: none;
     position: fixed;
@@ -373,6 +364,19 @@
             height: 3px;
             background: #fff;
             width: 50%;
+        }
+    }
+    &__text {
+        position: relative;
+    }
+    &__text-item {
+        display: none;
+        position: absolute;
+        white-space: nowrap;
+        left: 50%;
+        transform: translateX(-50%);
+        @include sm {
+            max-width: 13.333rem;
         }
     }
 }
@@ -411,6 +415,44 @@
     }
     &__highlight {
         background: rgba($orange,0.2) !important;
+    }
+}
+
+.t-tip {
+    position: relative;
+    cursor: pointer;
+    &::after {
+        content: attr(title);
+        width: 12rem;
+        position: absolute;
+        font-size: .8rem;
+        border: 1px $orange solid;
+        padding: 1rem;
+        background: black;
+        bottom: 150%;
+        left: 50%;
+        margin-left: -6rem;
+        box-sizing: border-box;
+        visibility: hidden;
+        pointer-events: none;
+        transform: scale(0);
+        transform-origin: center bottom;
+        transition: all 0.1s;
+        @include sm {
+            left: auto;
+            right: 0;
+            margin-left: 0;
+        }
+    }
+    &:hover:after {
+        visibility: visible;
+        transform: scale(1);
+    }
+    &__icon {
+        font-size: 1.6rem;
+        &:hover {
+            color: $orange;
+        }
     }
 }
 @keyframes spin {

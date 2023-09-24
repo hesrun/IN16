@@ -1,0 +1,20 @@
+.fun-zone-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4rem;
+    &__follow {
+        display: flex;
+        align-items: baseline;
+        gap: 2rem;
+        @include sm {
+            flex-direction: column;
+            gap: 0;
+        }
+    }
+    @include md {
+        flex-direction: column;
+    }
+    @include sm {
+        margin-bottom: 2rem;
+    }
+}

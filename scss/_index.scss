@@ -267,6 +267,17 @@
             width: 17rem;
         }
     }
+    &_fun {
+        .swiper-slide {
+            width: 23rem;
+            @include md {
+                width: 15rem;
+            }
+            @include sm {
+                width: 10rem;
+            }
+        }
+    }
     .swiper-pagination {
         width: auto;
         left: auto;
@@ -460,18 +471,14 @@
         }
     }
     &__price {
-        margin: 3rem 0;
-        display: grid;
-        grid-template-columns: 1fr;
+        margin: 2rem 0 1rem;
+        font-size: 4rem;
+        font-weight: 100;
+        small {
+            font-size: 50%;
+        }
         @include sm {
             margin: 2rem 0;
-        }
-    }
-    &__price-summ {
-        font-weight: 100;
-        font-size: 4rem;
-        @include sm {
-            font-size: 3rem;
         }
     }
     &__left {
@@ -502,6 +509,58 @@
             display: inline-flex;
         }
     }
+    &__tax-note {
+        display: block;
+        margin-top: 2rem;
+        font-size: .8rem;
+    }
+}
+.currency-drop {
+    position: relative;
+    &__btn {
+        font-size: 12px;
+        display: flex;
+        align-items: center;
+        text-transform: uppercase;
+        gap: 8px;
+        font-weight: 500;
+        cursor: pointer;
+        .icon {
+            font-size: 20px;
+            transform: rotate(90deg)
+        }
+        &:hover {
+            color: $orange;
+        }
+    }
+    &__list {
+        display: none;
+        top: 150%;
+        background: black;
+        border: 1px $line solid;
+        position: absolute;
+        z-index: 1;
+    }
+    &__list-item {
+        cursor: pointer;
+        font-size: 12px;
+        padding: .667rem 1rem;
+        display: grid;
+        grid-template-columns: 4rem 1fr;
+        gap: 1rem;
+        transition: all 0.3s;
+        span {
+            font-weight: 500;
+            text-align: right;
+        }
+        &:not(:last-child) {
+            border-bottom: 1px $line solid;
+        }
+        &:hover {
+            background: rgba(white, 0.1);
+        }
+    }
+
 }
 .imagesMass {
     display: none;

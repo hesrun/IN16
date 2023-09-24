@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
-@import url("https://cdn.iconly.io/kits/RoNrgJhswAfF/v_888295d/iconly.min.css");
+@import url("https://cdn.iconly.io/kits/RoNrgJhswAfF/v_da897a2/iconly.min.css");
 @import url("../font/mgj.css");
 * {
   box-sizing: border-box;
@@ -4660,6 +4660,21 @@ input:-webkit-autofill:focus {
   background: #fff;
   width: 50%;
 }
+.preloader__text {
+  position: relative;
+}
+.preloader__text-item {
+  display: none;
+  position: absolute;
+  white-space: nowrap;
+  left: 50%;
+  transform: translateX(-50%);
+}
+@media only screen and (max-width: 768px) {
+  .preloader__text-item {
+    max-width: 13.333rem;
+  }
+}
 
 .fit-btn {
   border: none;
@@ -4713,6 +4728,46 @@ input:-webkit-autofill:focus {
 }
 .iti__highlight {
   background: rgba(255, 116, 38, 0.2) !important;
+}
+
+.t-tip {
+  position: relative;
+  cursor: pointer;
+}
+.t-tip::after {
+  content: attr(title);
+  width: 12rem;
+  position: absolute;
+  font-size: 0.8rem;
+  border: 1px #FF7426 solid;
+  padding: 1rem;
+  background: black;
+  bottom: 150%;
+  left: 50%;
+  margin-left: -6rem;
+  box-sizing: border-box;
+  visibility: hidden;
+  pointer-events: none;
+  transform: scale(0);
+  transform-origin: center bottom;
+  transition: all 0.1s;
+}
+@media only screen and (max-width: 768px) {
+  .t-tip::after {
+    left: auto;
+    right: 0;
+    margin-left: 0;
+  }
+}
+.t-tip:hover:after {
+  visibility: visible;
+  transform: scale(1);
+}
+.t-tip__icon {
+  font-size: 1.6rem;
+}
+.t-tip__icon:hover {
+  color: #FF7426;
 }
 
 @keyframes spin {
@@ -4985,9 +5040,17 @@ input:-webkit-autofill:focus {
   margin-left: auto;
 }
 .modal-order__ship-note {
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   font-size: 0.8rem;
   margin-top: 30px;
+}
+.modal-order__ship-note > span {
+  text-transform: uppercase;
+}
+.modal-order__ship-note + .modal-order__ship-note {
+  margin-top: 0.5rem;
 }
 .modal-order__next-step {
   width: 225px;
@@ -5528,6 +5591,19 @@ input:-webkit-autofill:focus {
     width: 17rem;
   }
 }
+.preview-carusel_fun .swiper-slide {
+  width: 23rem;
+}
+@media only screen and (max-width: 992px) {
+  .preview-carusel_fun .swiper-slide {
+    width: 15rem;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .preview-carusel_fun .swiper-slide {
+    width: 10rem;
+  }
+}
 .preview-carusel .swiper-pagination {
   width: auto;
   left: auto;
@@ -5747,22 +5823,16 @@ input:-webkit-autofill:focus {
   }
 }
 .order-section__price {
-  margin: 3rem 0;
-  display: grid;
-  grid-template-columns: 1fr;
+  margin: 2rem 0 1rem;
+  font-size: 4rem;
+  font-weight: 100;
+}
+.order-section__price small {
+  font-size: 50%;
 }
 @media only screen and (max-width: 768px) {
   .order-section__price {
     margin: 2rem 0;
-  }
-}
-.order-section__price-summ {
-  font-weight: 100;
-  font-size: 4rem;
-}
-@media only screen and (max-width: 768px) {
-  .order-section__price-summ {
-    font-size: 3rem;
   }
 }
 .order-section__left {
@@ -5798,6 +5868,58 @@ input:-webkit-autofill:focus {
     margin: 2rem 0;
     display: inline-flex;
   }
+}
+.order-section__tax-note {
+  display: block;
+  margin-top: 2rem;
+  font-size: 0.8rem;
+}
+
+.currency-drop {
+  position: relative;
+}
+.currency-drop__btn {
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  gap: 8px;
+  font-weight: 500;
+  cursor: pointer;
+}
+.currency-drop__btn .icon {
+  font-size: 20px;
+  transform: rotate(90deg);
+}
+.currency-drop__btn:hover {
+  color: #FF7426;
+}
+.currency-drop__list {
+  display: none;
+  top: 150%;
+  background: black;
+  border: 1px rgba(255, 255, 255, 0.3) solid;
+  position: absolute;
+  z-index: 1;
+}
+.currency-drop__list-item {
+  cursor: pointer;
+  font-size: 12px;
+  padding: 0.667rem 1rem;
+  display: grid;
+  grid-template-columns: 4rem 1fr;
+  gap: 1rem;
+  transition: all 0.3s;
+}
+.currency-drop__list-item span {
+  font-weight: 500;
+  text-align: right;
+}
+.currency-drop__list-item:not(:last-child) {
+  border-bottom: 1px rgba(255, 255, 255, 0.3) solid;
+}
+.currency-drop__list-item:hover {
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .imagesMass {
@@ -6133,6 +6255,33 @@ input:-webkit-autofill:focus {
   padding: 0 2rem;
   line-height: 1.5;
   color: #AEAEAE;
+}
+
+.fun-zone-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 4rem;
+}
+.fun-zone-header__follow {
+  display: flex;
+  align-items: baseline;
+  gap: 2rem;
+}
+@media only screen and (max-width: 768px) {
+  .fun-zone-header__follow {
+    flex-direction: column;
+    gap: 0;
+  }
+}
+@media only screen and (max-width: 992px) {
+  .fun-zone-header {
+    flex-direction: column;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .fun-zone-header {
+    margin-bottom: 2rem;
+  }
 }
 
 @media (min-width: 768px) {
