@@ -60,6 +60,16 @@
             
         }
     }
+    &_whatsapp:hover {
+        border-color: #48C933 !important;
+        background: #48C933 !important;
+        color: white !important;
+    }
+    &_telegram:hover {
+        border-color: #0099DF !important;
+        background: #0099DF !important;
+        color: white !important;
+    }
     &_full {
         width: 100%;
     }
