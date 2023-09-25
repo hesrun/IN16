@@ -383,6 +383,9 @@
         @include md {
             font-size: 1.867rem;
         }
+        @include sm {
+            font-size: 1.2rem;
+        }
     }
     &__author {
         align-self: flex-end;
@@ -393,6 +396,14 @@
         @include md {
             img {
                 width: 5rem
+            }
+        }
+        @include sm {
+            align-self:flex-start;
+            grid-template-columns: 8rem 1fr;
+            align-items: center;
+            img {
+                width: 100%;
             }
         }
     }

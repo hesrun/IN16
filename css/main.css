@@ -5826,6 +5826,11 @@ input:-webkit-autofill:focus {
     font-size: 1.867rem;
   }
 }
+@media only screen and (max-width: 768px) {
+  .recenze-carusel__quote {
+    font-size: 1.2rem;
+  }
+}
 .recenze-carusel__author {
   align-self: flex-end;
   display: grid;
@@ -5836,6 +5841,16 @@ input:-webkit-autofill:focus {
 @media only screen and (max-width: 992px) {
   .recenze-carusel__author img {
     width: 5rem;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .recenze-carusel__author {
+    align-self: flex-start;
+    grid-template-columns: 8rem 1fr;
+    align-items: center;
+  }
+  .recenze-carusel__author img {
+    width: 100%;
   }
 }
 .recenze-carusel .recenze-pagination {
