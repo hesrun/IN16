@@ -544,6 +544,9 @@
         &:hover {
             color: $orange;
         }
+        @include sm {
+            justify-content: center;
+        }
     }
     &__list {
         display: none;
@@ -552,6 +555,11 @@
         border: 1px $line solid;
         position: absolute;
         z-index: 1;
+        @include sm {
+            width: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
     }
     &__list-item {
         cursor: pointer;
@@ -560,10 +568,10 @@
         display: grid;
         grid-template-columns: 4rem 1fr;
         gap: 1rem;
+        text-align: left;
         transition: all 0.3s;
         span {
             font-weight: 500;
-            text-align: right;
         }
         &:not(:last-child) {
             border-bottom: 1px $line solid;

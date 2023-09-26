@@ -6009,6 +6009,11 @@ input:-webkit-autofill:focus {
 .currency-drop__btn:hover {
   color: #FF7426;
 }
+@media only screen and (max-width: 768px) {
+  .currency-drop__btn {
+    justify-content: center;
+  }
+}
 .currency-drop__list {
   display: none;
   top: 150%;
@@ -6017,6 +6022,13 @@ input:-webkit-autofill:focus {
   position: absolute;
   z-index: 1;
 }
+@media only screen and (max-width: 768px) {
+  .currency-drop__list {
+    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
 .currency-drop__list-item {
   cursor: pointer;
   font-size: 12px;
@@ -6024,11 +6036,11 @@ input:-webkit-autofill:focus {
   display: grid;
   grid-template-columns: 4rem 1fr;
   gap: 1rem;
+  text-align: left;
   transition: all 0.3s;
 }
 .currency-drop__list-item span {
   font-weight: 500;
-  text-align: right;
 }
 .currency-drop__list-item:not(:last-child) {
   border-bottom: 1px rgba(255, 255, 255, 0.3) solid;
