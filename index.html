@@ -46,7 +46,7 @@
                             Limited edition of 999 pcs.</p>
                         <div class="sequence-section__btns">
                             <button id="Case" class="c-button c-button_white c-button_outline">DISCOVER</button>
-                            <button class="order-btn c-button c-button_orange c-button_filled">ORDER NOW</button>
+                            <button class="to-order-section c-button c-button_orange c-button_filled">ORDER NOW</button>
                         </div>
                         <div class="gphg">
                             <img src="img/index/gphg.png" alt="">
@@ -396,7 +396,7 @@
                 </div>
             </div>
         </div>
-        <div class="section-space">
+        <div id="orderSection" class="section-space">
             <div class="container-fluid">
                 <div class="order-section">
                     <div class="order-section__left">
@@ -940,11 +940,18 @@
             });
 
             let caseTop = $('#CaseSection').offset().top;
+            let orderSectionTop = $('#orderSection').offset().top;
+            
             let body = $("html, body");
 
             $('#Case').click(function(){
                 body.stop().animate({
                     scrollTop: caseTop - 90
+                }, 1000, 'linear');
+            })
+            $('.to-order-section').click(function(){
+                body.stop().animate({
+                    scrollTop: orderSectionTop
                 }, 1000, 'linear');
             })
         })
