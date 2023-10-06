@@ -17,7 +17,6 @@ body {
   font-weight: 300;
   color: #fff;
   line-height: 1.3;
-  scroll-behavior: smooth;
 }
 body::-webkit-scrollbar {
   width: 5px;
@@ -5231,6 +5230,10 @@ input:-webkit-autofill:focus {
   .modal-order__order-data {
     display: none;
   }
+}
+.modal-order__order-num {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
 }
 
 /* -------------------------------- mobal-fit ------------------------------- */
