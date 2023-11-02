@@ -1,17 +1,121 @@
 
+/* ---------------------------------- main ---------------------------------- */
+
+.blocker {
+    padding: 0;
+    z-index: 11;
+}
+.modal-fs {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    max-width: 100%;
+    box-shadow: none;
+    background: black;
+    overflow: auto;
+    padding: 0;
+    a.close-modal {
+        position: fixed;
+        left: 8.667rem;
+        top: 1.067rem;
+        width: 3.333rem;
+        height: 3.333rem;
+        background: none;
+        color: transparent;
+        &:after, &:before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            display: block;
+            width: 100%;
+            height: 1px;
+            background: #fff;
+            @include sm {
+                background:$orange;
+            }
+        }
+        &:after {
+            transform: rotate(45deg);
+        }
+        &:before {
+            transform: rotate(-45deg);
+        }
+        @include md {
+            left: 1rem;
+        }
+        @include sm {
+            width: 2rem;
+            height: 2rem;
+            border: 1px $orange solid;
+            background: black;
+        }
+    }
+    &__body {
+        min-height: 100%;
+        padding: 4rem 0;
+        flex: 1 1 auto;
+        display: flex;
+        align-items: center;
+    }
+}
+
+.modal {
+    padding: 0px;
+    a.close-modal {
+        filter: invert(1);
+    }
+    &__header {
+        padding: 3rem 3rem 1rem 3rem;
+        @include sm {
+            padding: 2rem 2rem 1rem;
+        }
+    }
+    &__body {
+        padding: 1rem 3rem;
+        @include sm {
+            padding: 1rem 2rem;
+        }
+    }
+    &__footer {
+        padding: 1rem 3rem 3rem 3rem;
+        @include sm {
+            padding: 1rem 2rem 2rem;
+        }
+    }
+    &__footer-btns {
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+.modal-small {
+    width: 100%;
+    max-width: 35rem;
+    background: black;
+    color: #fff;
+    border-radius: 0px;
+    border: 1px white solid;
+    @include sm {
+        width: calc(100% - 2rem);
+    }
+}
+
+
 /* -------------------------------- modal-nav ------------------------------- */
 .modal-nav {
     display: flex;
     flex-direction: column;
-    gap: 60px;
+    gap: 4rem;
     &__links {
         display: flex;
         flex-direction: column;
-        gap: 15px;
+        gap: 1rem;
     }
     &__link {
         font-family: $mgj;
-        font-size: 40.005px;
+        font-size: 2.667rem;
         text-decoration: none;
         color: #fff;
         &:hover {
@@ -19,7 +123,7 @@
         }
         @include sm {
             text-align: center;
-            font-size: 30px;
+            font-size: 2rem;
         }
     }
     &__bottom {
@@ -375,3 +479,6 @@
         vertical-align: middle;
     }
 }
+
+/* ------------------------------ country currency ----------------------------- */
+

@@ -22,6 +22,9 @@ body {
     @include scrollbars(5px, $orange, black);
     &.locked {
         overflow: hidden;
+        @include md {
+            overflow: auto;
+        }
     }
 }
 h1,

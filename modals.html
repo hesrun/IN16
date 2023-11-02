@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/10.1.0/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.2/jquery.modal.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.1.1/build/css/intlTelInput.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <div class="header">
+        <div class="container-fluid d-flex justify-content-between align-items-center">
+            <button id="menuOpen" class="header__burger">
+                <span></span>
+                <span></span>
+            </button>
+            <a href="" class="header__logo">
+                <img src="img/logos/logo-engraved.gif" alt="">
+            </a>
+            <div class="header__socials">
+                <a href="" class="header__social-link icon-ico-instagram">
+                </a>
+                <a href="" class="header__social-link icon-ico-whatsapp">
+                </a>
+                <a href="" class="header__social-link icon-ico-telegram">
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="main-content">
+
+    </div>
+    <div class="footer">
+        <div class="container-fluid d-flex flex-column flex-md-row justify-content-between align-items-center">
+            <div class="footer__logo">
+                <a href="">
+                    <img src="img/logos/logo-footer.svg" alt="">
+                </a>
+            </div>
+            <div class="footer__links">
+                <a href="" class="footer__link">Terms of Use</a>
+                <a href="" class="footer__link">Privacy Notice</a>
+                <a href="" class="footer__link">Cookie Policy</a>
+            </div>
+            <div class="footer__copy">
+                © 2023 GELFMAN A.G.
+            </div>
+        </div>
+    </div>
+    <div id="country" class="modal modal-small">
+        <div class="modal__header">
+            <h4 class="modal__title">COUTRY AND CURRENCY</h4>
+        </div>
+        <div class="modal__body">
+            <div class="c-input">
+                <select class="c-select" name="" id="">
+                    <option value="1">Russia</option>
+                    <option value="2">Czech</option>
+                    <option value="3">Ukraine</option>
+                    <option value="4">USA</option>
+                </select>
+            </div>
+            <div class="c-input">
+                <select class="c-select" name="" id="">
+                    <option value="1">USD</option>
+                    <option value="2">EUR</option>
+                    <option value="3">CZK</option>
+                </select>
+            </div>
+            <p>Payment for the order is made in Swiss Francs (CHF) in terms of your official currency</p>
+        </div>
+        <div class="modal__footer">
+            <div class="modal__footer-btns">
+                <button class="c-button c-button_white c-button_outline">APPLY</button>
+                <button class="c-button c-button_clear">CANCEL</button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script src="js/smooth-scroll.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.2/jquery.modal.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@18.1.1/build/js/intlTelInput.min.js"></script>
+    <script>
+
+        $(document).ready(function () {
+
+            $('.c-select').select2({
+                //minimumResultsForSearch: -1,
+                dropdownAutoWidth: true,
+                width: 'style'
+            });
+
+
+            $('#country').modal({
+                fadeDuration: 300,
+            });
+
+        })
+    </script>
+</body>
+
+</html>
