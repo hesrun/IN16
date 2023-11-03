@@ -63,9 +63,6 @@
 
 .modal {
     padding: 0px;
-    a.close-modal {
-        filter: invert(1);
-    }
     &__header {
         padding: 3rem 3rem 1rem 3rem;
         @include sm {
@@ -97,6 +94,9 @@
     color: #fff;
     border-radius: 0px;
     border: 1px white solid;
+    a.close-modal {
+        filter: invert(1);
+    }
     @include sm {
         width: calc(100% - 2rem);
     }

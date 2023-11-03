@@ -4988,9 +4988,6 @@ input:-webkit-autofill:focus {
 .modal {
   padding: 0px;
 }
-.modal a.close-modal {
-  filter: invert(1);
-}
 .modal__header {
   padding: 3rem 3rem 1rem 3rem;
 }
@@ -5028,6 +5025,9 @@ input:-webkit-autofill:focus {
   color: #fff;
   border-radius: 0px;
   border: 1px white solid;
+}
+.modal-small a.close-modal {
+  filter: invert(1);
 }
 @media only screen and (max-width: 768px) {
   .modal-small {
