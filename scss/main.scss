@@ -1,9 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 @import url('https://cdn.iconly.io/kits/RoNrgJhswAfF/v_54ebfc6/iconly.min.css');
 @import url('../font/mgj.css');
-@import "_vars.scss";
-@import "_mixins.scss";
-
+@import '_vars.scss';
+@import '_mixins.scss';
 
 * {
     box-sizing: border-box;
@@ -43,8 +42,6 @@ h1 {
     @include sm {
         font-size: 1.6rem;
     }
-    
-    
 }
 h2 {
     font-size: 40px;
@@ -55,7 +52,6 @@ h2 {
     @include sm {
         font-size: 1.6rem;
     }
-    
 }
 h3 {
     font-size: 30px;
@@ -88,7 +84,10 @@ a {
     text-decoration: none;
 }
 
-input,button,textarea,select {
+input,
+button,
+textarea,
+select {
     font-family: $inter;
     font-size: 15px;
     font-weight: 300;
@@ -96,10 +95,10 @@ input,button,textarea,select {
 }
 
 input:-webkit-autofill,
-input:-webkit-autofill:hover, 
+input:-webkit-autofill:hover,
 input:-webkit-autofill:focus {
-  -webkit-text-fill-color: white;
-  -webkit-box-shadow: 0 0 0px 40rem #000 inset;
+    -webkit-text-fill-color: white;
+    -webkit-box-shadow: 0 0 0px 40rem #000 inset;
 }
 
 .section-space {
@@ -109,6 +108,9 @@ input:-webkit-autofill:focus {
     }
     &:first-child {
         padding-top: 10rem;
+    }
+    &_top-none {
+        padding-top: 0;
     }
     &_overflow {
         overflow: hidden;
@@ -131,21 +133,18 @@ input:-webkit-autofill:focus {
     max-width: 100%;
 }
 
-@import "_grid.scss";
-@import "_ui.scss";
-@import "_header.scss";
-@import "_footer.scss";
-@import "_modals.scss";
-@import "_index.scss";
-@import "_faq.scss";
-@import "_press.scss";
-@import "_contact.scss";
-@import "_about.scss";
-@import "_article.scss";
-@import "_fun.scss";
-
-
-
+@import '_grid.scss';
+@import '_ui.scss';
+@import '_header.scss';
+@import '_footer.scss';
+@import '_modals.scss';
+@import '_index.scss';
+@import '_faq.scss';
+@import '_press.scss';
+@import '_contact.scss';
+@import '_about.scss';
+@import '_article.scss';
+@import '_fun.scss';
 
 @media (min-width: 768px) {
     .container-fluid {

@@ -18,7 +18,7 @@
     }
     &__content {
         max-width: 33.333rem;
-        
+
         &_right {
             margin-left: auto;
         }
@@ -126,7 +126,7 @@
     }
 }
 .honeycomb-bg:after {
-    content: "";
+    content: '';
     display: block;
     position: absolute;
     width: 100%;
@@ -152,7 +152,7 @@
         width: 5.667rem;
     }
     span {
-        font-size: .8rem;
+        font-size: 0.8rem;
     }
     @include sm {
         margin: 2rem 0 2rem;
@@ -185,7 +185,7 @@
     grid-template-columns: 1fr;
     gap: 2rem;
     &__title {
-        font-size: .8rem;
+        font-size: 0.8rem;
         text-transform: uppercase;
     }
     &__data {
@@ -206,14 +206,14 @@
         border: none;
     }
     span {
-        font-size: .8rem;
+        font-size: 0.8rem;
     }
 }
 .logo-engraved {
     display: flex;
     align-items: center;
-    gap: .533rem;
-    font-size: .8rem;
+    gap: 0.533rem;
+    font-size: 0.8rem;
     text-transform: uppercase;
     img {
         width: 2.333rem;
@@ -244,13 +244,13 @@
         align-items: center;
     }
     &__title {
-        margin-top: .667rem;
+        margin-top: 0.667rem;
         display: block;
         text-transform: uppercase;
         font-weight: 500;
     }
     &__text {
-        font-size: .8rem;
+        font-size: 0.8rem;
     }
 }
 .preview-carusel {
@@ -260,6 +260,7 @@
     }
     .swiper-slide {
         width: 33.333rem;
+        margin-bottom: 30px;
         @include md {
             width: 20rem;
         }
@@ -294,7 +295,7 @@
     .swiper-pagination-bullet {
         width: 1rem;
         height: 1rem;
-        border: .067rem white solid;
+        border: 0.067rem white solid;
         opacity: 1;
     }
     .swiper-pagination-bullet-active {
@@ -306,7 +307,6 @@
     }
     &__image {
         display: block;
-        border: 1px $line solid;
         overflow: hidden;
         cursor: pointer;
         transition: all 0.3s;
@@ -316,7 +316,7 @@
             vertical-align: middle;
         }
         &:hover {
-            border-color: $orange;
+            box-shadow: 0 4px 25px 5px rgba(#ff7426, 0.5);
             img {
                 transform: scale(1.1);
             }
@@ -327,9 +327,9 @@
     }
     &__time {
         display: inline-block;
-        font-size: .8rem;
+        font-size: 0.8rem;
         text-transform: uppercase;
-        color: rgba(white,0.3);
+        color: rgba(white, 0.3);
         margin-left: 1rem;
     }
     &__360 {
@@ -370,7 +370,7 @@
         gap: 3rem;
         @include md {
             gap: 2rem;
-            align-items: flex-start
+            align-items: flex-start;
         }
         @include sm {
             flex-direction: column;
@@ -395,11 +395,11 @@
         font-size: 12px;
         @include md {
             img {
-                width: 5rem
+                width: 5rem;
             }
         }
         @include sm {
-            align-self:flex-start;
+            align-self: flex-start;
             grid-template-columns: 8rem 1fr;
             align-items: center;
             img {
@@ -427,7 +427,7 @@
     .swiper-pagination-bullet {
         width: 1rem;
         height: 1rem;
-        border: .067rem white solid;
+        border: 0.067rem white solid;
         opacity: 1;
     }
     .swiper-pagination-bullet-active {
@@ -452,7 +452,6 @@
             display: none;
         }
     }
-    
 }
 .order-section {
     position: relative;
@@ -466,42 +465,24 @@
     }
     &__product {
         text-align: center;
+        img {
+            transform: rotate(45deg);
+        }
         @include sm {
             img {
                 width: 60%;
             }
         }
     }
-    &__buy {
-        @include sm {
-            h2 br {
-                display: none;
-            }
-            .order-btn {
-                width: 100%;
-            }
-        }
-    }
-    &__price {
-        margin: 2rem 0 1rem;
-        font-size: 4rem;
-        font-weight: 100;
-        small {
-            font-size: 50%;
-        }
-        @include sm {
-            margin: 2rem 0;
-        }
-    }
     &__left {
-        align-self: center;
+        padding-top: 15rem;
         @include sm {
             text-align: center;
         }
     }
     &__right {
-        align-self: center;
-        padding-bottom: 5rem;
+        align-self: flex-end;
+        padding-bottom: 15rem;
         @include sm {
             text-align: center;
             padding-bottom: 0rem;
@@ -521,16 +502,120 @@
             display: inline-flex;
         }
     }
-    &__tax-note {
-        display: block;
-        margin-top: 2rem;
-        font-size: .8rem;
+}
+
+.order-types {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3.667rem;
+}
+.order-type-card {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    box-shadow: 0 0.267rem 3.333rem 0.333rem rgba(white, 0.35);
+    transition: all 0.3s;
+    &:hover {
+        box-shadow: 0 0.267rem 3.333rem 0.333rem rgba(#ff7426, 0.5);
+    }
+    &__head {
+        h3 {
+            margin-bottom: 1rem;
+        }
+    }
+    &__price {
+        margin-bottom: 2rem;
+        strong {
+            font-size: 0.933rem;
+            font-weight: 500;
+        }
+        b {
+            margin-top: 0.333rem;
+            line-height: 0.9;
+            display: block;
+            font-weight: 100;
+            font-size: 5.333rem;
+            &.small {
+                font-size: 3.333rem;
+            }
+        }
+    }
+    &__notax {
+        font-size: 0.667rem;
+        opacity: 0.5;
+    }
+    &__labels {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+    &__label {
+        border: 1px #8d8d8d dashed;
+        color: #979797;
+        border-radius: 1.333rem;
+        line-height: 2.333rem;
+        padding: 0 1rem;
+        font-size: 0.8rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        &_green {
+            border-color: #48c933;
+            color: #48c933;
+        }
+    }
+    &__body {
+        flex: 1 1 auto;
+        padding: 2rem 0;
+    }
+    &__plans {
+        display: flex;
+        align-items: center;
+        gap: 0.667rem;
+    }
+    &__plan-btn {
+        padding: 0 1rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        font-size: 0.8rem;
+        line-height: 2.333rem;
+        border: 1px white solid;
+        transition: all 0.3s;
+        cursor: pointer;
+        input {
+            display: none;
+        }
+        &:hover {
+            background: white;
+            color: black;
+        }
+        &:has(input:checked) {
+            background: $orange;
+            border-color: orange;
+            color: black;
+        }
+    }
+    &__plan-price {
+        margin-left: 2rem;
+        line-height: 1;
+        strong {
+            display: block;
+            font-size: 0.667rem;
+            font-weight: 500;
+        }
+        b {
+            color: $orange;
+            margin-top: 0.333rem;
+            line-height: 0.9;
+            display: block;
+            font-weight: 400;
+            font-size: 1.733rem;
+        }
     }
 }
 .currency-drop {
     position: relative;
     &__btn {
-        font-size: 12px;
+        font-size: 0.8rem;
         display: flex;
         align-items: center;
         text-transform: uppercase;
@@ -538,8 +623,8 @@
         font-weight: 500;
         cursor: pointer;
         .icon {
-            font-size: 20px;
-            transform: rotate(90deg)
+            font-size: 1.333rem;
+            transform: rotate(90deg);
         }
         &:hover {
             color: $orange;
@@ -563,8 +648,8 @@
     }
     &__list-item {
         cursor: pointer;
-        font-size: 12px;
-        padding: .667rem 1rem;
+        font-size: 0.8rem;
+        padding: 0.667rem 1rem;
         display: grid;
         grid-template-columns: 4rem 1fr;
         gap: 1rem;
@@ -580,7 +665,6 @@
             background: rgba(white, 0.1);
         }
     }
-
 }
 .imagesMass {
     display: none;
