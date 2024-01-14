@@ -458,7 +458,7 @@
     display: grid;
     grid-template-columns: 23.333rem 1fr 23.333rem;
     @include lg {
-        grid-template-columns: 16.667rem 1fr 13.333rem;
+        grid-template-columns: 20rem 1fr 20rem;
     }
     @include md {
         grid-template-columns: 1fr;
@@ -468,27 +468,55 @@
         img {
             transform: rotate(45deg);
         }
-        @include sm {
+        @include lg {
             img {
-                width: 60%;
+                width: 80%;
+            }
+        }
+        @include md {
+            margin-top: -40%;
+            img {
+                width: 50%;
             }
         }
     }
     &__left {
         padding-top: 15rem;
-        @include sm {
-            text-align: center;
+        @include lg {
+            padding-top: 5rem;
+        }
+        @include md {
+            max-width: 70%;
         }
     }
     &__right {
         align-self: flex-end;
         padding-bottom: 15rem;
+        @include lg {
+            padding-bottom: 5rem;
+            br {
+                display: none;
+            }
+        }
         @include sm {
-            text-align: center;
-            padding-bottom: 0rem;
+            padding-bottom: 3rem;
             p {
                 margin: 1rem 0;
             }
+        }
+    }
+    &__ineichen {
+        @include sm {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            align-items: center;
+            gap: 1rem 3rem;
+            p {
+                margin: 0;
+            }
+        }
+        .c-button {
+            grid-column: 2 span;
         }
     }
     &__fit {
@@ -498,7 +526,7 @@
             font-size: 3rem;
         }
         @include sm {
-            margin: 2rem 0;
+            margin: 0;
             display: inline-flex;
         }
     }
@@ -508,6 +536,9 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 3.667rem;
+    @include lg {
+        grid-template-columns: 1fr;
+    }
 }
 .order-type-card {
     display: flex;
@@ -517,6 +548,16 @@
     transition: all 0.3s;
     &:hover {
         box-shadow: 0 0.267rem 3.333rem 0.333rem rgba(#ff7426, 0.5);
+    }
+    &:not(:hover) {
+        .order-type-card__label {
+            border: 1px #8d8d8d dashed;
+            color: #979797;
+        }
+        .c-button {
+            background-color: #838383;
+            border-color: #838383;
+        }
     }
     &__head {
         h3 {
@@ -550,18 +591,14 @@
         gap: 1rem;
     }
     &__label {
-        border: 1px #8d8d8d dashed;
-        color: #979797;
+        border: 1px #48c933 dashed;
+        color: #48c933;
         border-radius: 1.333rem;
         line-height: 2.333rem;
         padding: 0 1rem;
         font-size: 0.8rem;
         font-weight: 600;
         text-transform: uppercase;
-        &_green {
-            border-color: #48c933;
-            color: #48c933;
-        }
     }
     &__body {
         flex: 1 1 auto;
@@ -571,8 +608,14 @@
         display: flex;
         align-items: center;
         gap: 0.667rem;
+        @include md {
+            gap: 2rem 1rem;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+        }
     }
     &__plan-btn {
+        text-align: center;
         padding: 0 1rem;
         font-weight: 500;
         text-transform: uppercase;
@@ -609,6 +652,11 @@
             display: block;
             font-weight: 400;
             font-size: 1.733rem;
+        }
+        @include md {
+            text-align: center;
+            margin: 0;
+            grid-column: 3 span;
         }
     }
 }
