@@ -546,6 +546,9 @@
     padding: 2rem;
     box-shadow: 0 0.267rem 3.333rem 0.333rem rgba(white, 0.35);
     transition: all 0.3s;
+    @include sm {
+        padding: 1rem;
+    }
     &:hover {
         box-shadow: 0 0.267rem 3.333rem 0.333rem rgba(#ff7426, 0.5);
     }
@@ -576,6 +579,12 @@
             display: block;
             font-weight: 100;
             font-size: 5.333rem;
+            @include sm {
+                font-size: 4rem;
+                &.small {
+                    font-size: 3rem;
+                }
+            }
             &.small {
                 font-size: 3.333rem;
             }
@@ -635,6 +644,9 @@
             background: $orange;
             border-color: orange;
             color: black;
+        }
+        @include sm {
+            padding: 0;
         }
     }
     &__plan-price {

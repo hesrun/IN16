@@ -6096,6 +6096,11 @@ input:-webkit-autofill:focus {
   box-shadow: 0 0.267rem 3.333rem 0.333rem rgba(255, 255, 255, 0.35);
   transition: all 0.3s;
 }
+@media only screen and (max-width: 768px) {
+  .order-type-card {
+    padding: 1rem;
+  }
+}
 .order-type-card:hover {
   box-shadow: 0 0.267rem 3.333rem 0.333rem rgba(255, 116, 38, 0.5);
 }
@@ -6123,6 +6128,14 @@ input:-webkit-autofill:focus {
   display: block;
   font-weight: 100;
   font-size: 5.333rem;
+}
+@media only screen and (max-width: 768px) {
+  .order-type-card__price b {
+    font-size: 4rem;
+  }
+  .order-type-card__price b.small {
+    font-size: 3rem;
+  }
 }
 .order-type-card__price b.small {
   font-size: 3.333rem;
@@ -6184,6 +6197,11 @@ input:-webkit-autofill:focus {
   background: #FF7426;
   border-color: orange;
   color: black;
+}
+@media only screen and (max-width: 768px) {
+  .order-type-card__plan-btn {
+    padding: 0;
+  }
 }
 .order-type-card__plan-price {
   margin-left: 2rem;

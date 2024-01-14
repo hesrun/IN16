@@ -781,7 +781,7 @@
         </div>
     </div>
 
-    <div class="preloader">
+    <div class="preloader" style="display: none">
         <div class="preloader__content">
             <img src="img/logos/logo-load-1.gif" alt="" class="preloader__logo">
             <div class="preloader__progress">
@@ -944,15 +944,15 @@
 
             // //прелоадер
 
-            let preloadTexts = $('.preloader__text .preloader__text-item').length;
-            for (let i = 0; i <= preloadTexts; ++i) {
-                setTimeout(function () {
-                    $('.preloader__text-item').fadeOut(100);
-                    $('.preloader__text-item:nth-child(' + i + ')').fadeIn(400);
-                }, 1500 * i)
-            }
+            // let preloadTexts = $('.preloader__text .preloader__text-item').length;
+            // for (let i = 0; i <= preloadTexts; ++i) {
+            //     setTimeout(function () {
+            //         $('.preloader__text-item').fadeOut(100);
+            //         $('.preloader__text-item:nth-child(' + i + ')').fadeIn(400);
+            //     }, 1500 * i)
+            // }
 
-            $('body').addClass('locked');
+            //$('body').addClass('locked');
 
             $(window).on('load', function () {
                 $('.preloader').fadeOut(500);
