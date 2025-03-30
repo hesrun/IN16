@@ -112,6 +112,9 @@
             </div>
             <div class="footer__copy">
                 © 2023 GELFMAN A.G.
+                <a href="https://tehmart.com/" class="footer-developer">
+                    made by tehmart
+                </a>
             </div>
         </div>
     </div>
@@ -313,7 +316,7 @@
                 width: 'style'
             });
 
-            
+
 
             const inputPhone = document.querySelector("#phoneNum");
             window.intlTelInput(inputPhone, {});
@@ -321,13 +324,13 @@
 
             //показать скрыть заказ
             let visibleOrder = false;
-            $('#viewOrder').click(function(){
+            $('#viewOrder').click(function () {
                 $('.modal-order__order-data').is(":visible") ? $(this).text('view my order') : $(this).text('hide my order');
                 $('.modal-order__order-data').slideToggle(300);
             })
 
             //шаги
-        
+
             var stepNum = 1;
 
             $('#nextStep').click(function () {

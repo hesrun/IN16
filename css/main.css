@@ -4919,6 +4919,9 @@ input:-webkit-autofill:focus {
   color: #FF7426;
 }
 .footer__copy {
+  display: flex;
+  align-items: center;
+  gap: 15px;
   font-size: 0.8rem;
   text-transform: uppercase;
 }
